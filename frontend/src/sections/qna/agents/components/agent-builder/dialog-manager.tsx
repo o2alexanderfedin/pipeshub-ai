@@ -1,21 +1,24 @@
 // src/sections/qna/agents/components/dialog-manager.tsx
 import React from 'react';
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  Box,
-  Typography,
-  IconButton,
-  useTheme,
-  alpha,
-} from '@mui/material';
 import { Icon } from '@iconify/react';
 import closeIcon from '@iconify-icons/eva/close-outline';
 import warningIcon from '@iconify-icons/eva/alert-triangle-outline';
+
+import {
+  Box,
+  alpha,
+  Dialog,
+  Button,
+  useTheme,
+  Typography,
+  IconButton,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from '@mui/material';
+
 import NodeConfigDialog from './node-config-dialog';
+
 import type { AgentBuilderDialogManagerProps } from '../../types/agent';
 
 const AgentBuilderDialogManager: React.FC<AgentBuilderDialogManagerProps> = ({

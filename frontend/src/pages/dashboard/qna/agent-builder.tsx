@@ -1,12 +1,14 @@
+import type { Agent } from 'src/types/agent';
+
 import { Helmet } from 'react-helmet-async';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { UserProvider } from 'src/context/UserContext';
-import { AuthProvider } from 'src/auth/context/jwt';
+import { GroupsProvider } from 'src/context/GroupsContext';
 
 import { AgentBuilder } from 'src/sections/qna/agents';
-import { GroupsProvider } from 'src/context/GroupsContext';
-import { Agent } from 'src/types/agent';
+
+import { AuthProvider } from 'src/auth/context/jwt';
 
 // ----------------------------------------------------------------------
 

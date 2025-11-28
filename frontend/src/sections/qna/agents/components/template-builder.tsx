@@ -1,43 +1,44 @@
 // src/sections/agents/components/template-builder.tsx
-import React, { useState, useEffect, useCallback } from 'react';
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  Box,
-  Button,
-  Typography,
-  TextField,
-  Grid,
-  Chip,
-  IconButton,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Switch,
-  FormControlLabel,
-  Alert,
-  CircularProgress,
-  useTheme,
-  Autocomplete,
-  alpha,
-  useMediaQuery,
-  Fade,
-} from '@mui/material';
+import type { AgentTemplate, AgentTemplateFormData } from 'src/types/agent';
+
 import { Icon } from '@iconify/react';
+import addIcon from '@iconify-icons/mdi/plus';
 import closeIcon from '@iconify-icons/mdi/close';
 import checkIcon from '@iconify-icons/mdi/check';
-import addIcon from '@iconify-icons/mdi/plus';
 import deleteIcon from '@iconify-icons/mdi/delete';
 import templateIcon from '@iconify-icons/mdi/file-document';
+import React, { useState, useEffect, useCallback } from 'react';
 
-import type { AgentTemplate, AgentTemplateFormData } from 'src/types/agent';
+import {
+  Box,
+  Grid,
+  Chip,
+  Fade,
+  Alert,
+  alpha,
+  Dialog,
+  Button,
+  Select,
+  Switch,
+  MenuItem,
+  useTheme,
+  TextField,
+  Typography,
+  IconButton,
+  InputLabel,
+  DialogTitle,
+  FormControl,
+  Autocomplete,
+  DialogContent,
+  useMediaQuery,
+  FormControlLabel,
+  CircularProgress,
+} from '@mui/material';
+
 import AgentApiService from '../services/api';
 import {
-  validateAgentTemplateForm,
-  getInitialTemplateFormData,
   TEMPLATE_CATEGORIES,
+  getInitialTemplateFormData,
 } from '../utils/agent';
 
 interface TemplateBuilderProps {

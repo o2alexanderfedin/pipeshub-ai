@@ -1,6 +1,10 @@
-import React, { createContext, useContext, useReducer, ReactNode, useMemo, useCallback, useRef, useEffect } from 'react';
-import { Connector } from '../types/types';
+import type { ReactNode} from 'react';
+
+import React, { useRef, useMemo, useEffect, useContext, useReducer, useCallback, createContext } from 'react';
+
 import { ConnectorApiService } from '../services/api';
+
+import type { Connector } from '../types/types';
 
 // State interface
 interface ConnectorState {

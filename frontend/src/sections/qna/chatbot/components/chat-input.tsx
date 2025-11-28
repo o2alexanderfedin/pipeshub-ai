@@ -1,27 +1,29 @@
-import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import { Icon } from '@iconify/react';
+import filterIcon from '@iconify-icons/mdi/filter';
 import arrowUpIcon from '@iconify-icons/mdi/arrow-up';
 import chevronDownIcon from '@iconify-icons/mdi/chevron-down';
 import sparklesIcon from '@iconify-icons/mdi/star-four-points';
-import filterIcon from '@iconify-icons/mdi/filter';
+import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react';
 
 import {
   Box,
-  Paper,
-  IconButton,
-  useTheme,
-  alpha,
   Menu,
-  MenuItem,
-  Typography,
   Chip,
-  Tooltip,
+  Paper,
+  alpha,
   Badge,
+  Tooltip,
   Divider,
+  useTheme,
+  MenuItem,
+  IconButton,
+  Typography,
 } from '@mui/material';
+
 import axios from 'src/utils/axios';
-import { createScrollableContainerStyle } from '../utils/styles/scrollbar';
+
 import ChatBotFilters from './chat-bot-filters';
+import { createScrollableContainerStyle } from '../utils/styles/scrollbar';
 
 export interface Model {
   modelType: string;
@@ -326,7 +328,7 @@ const ChatInput: React.FC<ChatInputProps> = ({
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const value = e.target.value;
+      const {value} = e.target;
       setLocalValue(value);
       setHasText(!!value.trim());
 

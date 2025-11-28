@@ -15,18 +15,18 @@ import type {
 
 import { Icon } from '@iconify/react';
 import * as pdfjsLib from 'pdfjs-dist';
+import plusIcon from '@iconify-icons/mdi/plus';
+import minusIcon from '@iconify-icons/mdi/minus';
+import resizeIcon from '@iconify-icons/mdi/resize';
+import refreshIcon from '@iconify-icons/mdi/refresh';
+import magnifyIcon from '@iconify-icons/mdi/magnify';
+import magnifyPlusIcon from '@iconify-icons/mdi/magnify-plus';
+import magnifyMinusIcon from '@iconify-icons/mdi/magnify-minus';
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Tip, Popup, Highlight, AreaHighlight, PdfHighlighter } from 'react-pdf-highlighter';
 
 import { Box, Slider, CircularProgress } from '@mui/material';
 
-import minusIcon from '@iconify-icons/mdi/minus';
-import plusIcon from '@iconify-icons/mdi/plus';
-import magnifyMinusIcon from '@iconify-icons/mdi/magnify-minus';
-import magnifyPlusIcon from '@iconify-icons/mdi/magnify-plus';
-import refreshIcon from '@iconify-icons/mdi/refresh';
-import resizeIcon from '@iconify-icons/mdi/resize';
-import magnifyIcon from '@iconify-icons/mdi/magnify';
 import CitationSidebar from './highlighter-sidebar';
 
 // Initialize PDF worker

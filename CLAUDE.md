@@ -1,4 +1,4 @@
-# Claude Code Guidelines for OilField Project
+# Claude Code Guidelines for PipesHub AI Project
 
 ## Task Execution Strategy
 
@@ -82,15 +82,48 @@ If the database is in place with correct schema, you **must NOT** touch that sch
 If the data is already in the database, you **must NOT** modify, delete, or re-insert it unless explicitly requested. Do not run seed scripts, data population scripts, or any operations that would alter existing data. Always verify what data exists before attempting any data operations.
 
 ### Database Connection Information
-The project uses PostgreSQL with the following connection details:
-- **Host**: localhost
-- **Port**: 5434
-- **Database**: oilfield
-- **User**: oilfield
-- **Password**: oilfield_dev
-- **Connection URL**: postgresql://oilfield:oilfield_dev@localhost:5434/oilfield
+The project uses multiple databases:
 
-Configuration files:
-- Root: `.env` (active configuration)
-- Backend: `backend/.env` (uses port 5432)
-- Examples: `.env.example` and `backend/.env.example`
+**ArangoDB**:
+- **Host**: localhost:8529
+- **Database**: es
+- **User**: root
+- **Password**: your_password
+
+**MongoDB**:
+- **Host**: localhost:27017
+- **Database**: es
+- **User**: admin
+- **Password**: password
+
+**Qdrant** (Vector Database):
+- **Host**: localhost:6333 (HTTP) / localhost:6334 (gRPC)
+- **API Key**: your_qdrant_secret_api_key
+
+## PipesHub Configuration
+
+### Docker Volume Mounts
+- **Host Path**: `/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig`
+- **Container Path**: `/data/local-files`
+- **Mode**: Read-only (`:ro`)
+
+This mount makes the project directory available to the Local Filesystem connector for indexing.
+
+### Application Credentials
+- **Email**: af@o2.services
+- **Password**: Vilisaped1!
+
+### AI Model Configuration
+
+**LLM (Language Model)**:
+- **Model**: claude-sonnet-4-5-20250929
+- **Features**: With reasoning capability
+- **API Key**: Set via `ANTHROPIC_API_KEY` environment variable in docker-compose.dev.yml
+
+**Embedding Model**:
+- **Model**: Sentence Transformers - all-MiniLM-L6-v2
+- **Type**: Text-only (not multimodal)
+- **Deployment**: Local inference
+
+### Email Configuration
+- **SMTP**: Not configured (skip email features)

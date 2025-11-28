@@ -1,40 +1,39 @@
 import type {
   Message,
   Citation,
-  Metadata,
   Conversation,
   CustomCitation,
+  CompletionData,
   FormattedMessage,
   ExpandedCitationsState,
-  CompletionData,
 } from 'src/types/chat-bot';
 
 import { Icon } from '@iconify/react';
 import menuIcon from '@iconify-icons/mdi/menu';
 import { useParams, useNavigate } from 'react-router';
-import React, { useRef, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react';
 
 import {
   Box,
   Alert,
-  Button,
   styled,
   Tooltip,
   Snackbar,
   useTheme,
   IconButton,
   CircularProgress,
-  alpha,
-  Typography,
 } from '@mui/material';
+
+import { useVerification } from 'src/hooks/use-verification';
 
 import axios from 'src/utils/axios';
 
 import { CONFIG } from 'src/config-global';
 
+import { KnowledgeBaseAPI } from 'src/sections/knowledgebase/services/api';
 import { ORIGIN } from 'src/sections/knowledgebase/constants/knowledge-search';
 import { useConnectors } from 'src/sections/accountdetails/connectors/context';
-import { KnowledgeBaseAPI } from 'src/sections/knowledgebase/services/api';
+import { HupyyControls } from 'src/sections/knowledgebase/components/verification';
 import { getConnectorPublicUrl } from 'src/sections/accountdetails/account-settings/services/utils/services-configuration-service';
 
 import ChatInput from './components/chat-input';
@@ -42,14 +41,14 @@ import ChatSidebar from './components/chat-sidebar';
 import HtmlViewer from './components/html-highlighter';
 import TextViewer from './components/text-highlighter';
 import ExcelViewer from './components/excel-highlighter';
-import ChatMessagesArea from './components/chat-message-area';
-import PdfHighlighterComp from './components/pdf-highlighter';
-import MarkdownViewer from './components/markdown-highlighter';
-import DocxHighlighterComp from './components/docx-highlighter';
 import WelcomeMessage from './components/welcome-message';
 import { StreamingContext } from './components/chat-message';
-import { processStreamingContentLegacy } from './utils/styles/content-processing';
+import ChatMessagesArea from './components/chat-message-area';
+import PdfHighlighterComp from './components/pdf-highlighter';
 import ImageHighlighter from './components/image-highlighter';
+import MarkdownViewer from './components/markdown-highlighter';
+import DocxHighlighterComp from './components/docx-highlighter';
+import { processStreamingContentLegacy } from './utils/styles/content-processing';
 
 const DRAWER_WIDTH = 300;
 
@@ -625,6 +624,9 @@ const ChatInterface = () => {
   const [updateTrigger, setUpdateTrigger] = useState(0);
   const forceUpdate = useCallback(() => setUpdateTrigger((prev) => prev + 1), []);
 
+  // Verification state
+  const verification = useVerification();
+
   const streamingManager = StreamingManager.getInstance();
   const theme = useTheme();
 
@@ -1013,6 +1015,7 @@ const ChatInterface = () => {
             modelName: selectedModel?.modelName,
             chatMode,
             filters: filters || currentFilters,
+            verification_enabled: verification.state.enabled,
           },
           wasCreatingNewConversation
         );
@@ -1037,6 +1040,7 @@ const ChatInterface = () => {
       isCurrentConversationLoading,
       selectedModel,
       currentFilters,
+      verification.state.enabled,
     ]
   );
 
@@ -1690,6 +1694,13 @@ const ChatInterface = () => {
                   currentStatus={currentConversationStatus.statusMessage}
                   isStatusVisible={currentConversationStatus.showStatus}
                 />
+                <Box sx={{ px: 2, pb: 1 }}>
+                  <HupyyControls
+                    enabled={verification.state.enabled}
+                    onToggle={verification.toggleVerification}
+                    disabled={isCurrentConversationLoading}
+                  />
+                </Box>
                 <ChatInput
                   onSubmit={handleSendMessage}
                   isLoading={isCurrentConversationLoading}

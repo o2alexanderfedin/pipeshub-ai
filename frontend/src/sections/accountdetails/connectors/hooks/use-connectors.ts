@@ -1,4 +1,5 @@
-import { useEffect, useCallback, useMemo } from 'react';
+import { useMemo, useEffect, useCallback } from 'react';
+
 import { useConnectorContext } from '../context/connector-context';
 
 // Cache duration in milliseconds (5 minutes)

@@ -1,36 +1,36 @@
 // src/sections/agents/components/flow-builder-canvas.tsx
-import React, { useRef, useCallback } from 'react';
-import {
-  ReactFlow,
-  MiniMap,
-  Controls,
-  Background,
-  BackgroundVariant,
+import '@xyflow/react/dist/style.css';
+
+import type {
   Node,
   Edge,
-  Connection,
   NodeTypes,
+  Connection} from '@xyflow/react';
+
+import { Icon } from '@iconify/react';
+import zoomInIcon from '@iconify-icons/mdi/plus';
+import React, { useRef, useCallback } from 'react';
+import zoomOutIcon from '@iconify-icons/mdi/minus';
+import centerFocusIcon from '@iconify-icons/mdi/focus-auto';
+import fitScreenIcon from '@iconify-icons/mdi/fit-to-screen';
+import {
   Panel,
+  Controls,
+  ReactFlow,
+  Background,
   useReactFlow,
+  BackgroundVariant,
 } from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
+
 import {
   Box,
   Paper,
-  Typography,
-  Stack,
-  useTheme,
   alpha,
-  IconButton,
   Tooltip,
+  useTheme,
+  Typography,
+  IconButton,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
-import sparklesIcon from '@iconify-icons/mdi/auto-awesome';
-import fitScreenIcon from '@iconify-icons/mdi/fit-to-screen';
-import centerFocusIcon from '@iconify-icons/mdi/focus-auto';
-import zoomInIcon from '@iconify-icons/mdi/plus';
-import zoomOutIcon from '@iconify-icons/mdi/minus';
-import playIcon from '@iconify-icons/mdi/play';
 
 // Import the enhanced FlowNode component
 import FlowNode from './flow-node';

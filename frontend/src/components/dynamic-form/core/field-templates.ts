@@ -1,13 +1,14 @@
+import type { IconifyIcon } from '@iconify/react';
+
 import { z } from 'zod';
 import keyIcon from '@iconify-icons/mdi/key';
 import linkIcon from '@iconify-icons/mdi/link';
 import robotIcon from '@iconify-icons/mdi/robot';
+import mediaIcon from '@iconify-icons/mdi/image';
+import brainIcon from '@iconify-icons/mdi/brain';
 import serverIcon from '@iconify-icons/mdi/server';
 import cubeIcon from '@iconify-icons/mdi/cube-outline';
 import mailLineIcon from '@iconify-icons/ri/mail-line';
-import mediaIcon from '@iconify-icons/mdi/image';
-import brainIcon from '@iconify-icons/mdi/brain';
-import type { IconifyIcon } from '@iconify/react';
 
 export interface FieldTemplate {
   name: string;

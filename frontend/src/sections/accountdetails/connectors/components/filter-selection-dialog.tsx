@@ -1,31 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  Typography,
-  Box,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Chip,
-  OutlinedInput,
-  Checkbox,
-  ListItemText,
-  Stack,
-  Divider,
-  useTheme,
-  alpha,
-} from '@mui/material';
-import { Iconify } from 'src/components/iconify';
-import filterIcon from '@iconify-icons/mdi/filter';
 import checkIcon from '@iconify-icons/mdi/check';
 import closeIcon from '@iconify-icons/mdi/close';
-import { Connector } from '../types/types';
+import React, { useState, useEffect } from 'react';
+import filterIcon from '@iconify-icons/mdi/filter';
+
+import {
+  Box,
+  Chip,
+  Stack,
+  alpha,
+  Dialog,
+  Button,
+  Select,
+  Divider,
+  MenuItem,
+  Checkbox,
+  useTheme,
+  Typography,
+  InputLabel,
+  DialogTitle,
+  FormControl,
+  ListItemText,
+  DialogContent,
+  DialogActions,
+  OutlinedInput,
+} from '@mui/material';
+
+import { Iconify } from 'src/components/iconify';
+
 import { ConnectorApiService } from '../services/api';
+
+import type { Connector } from '../types/types';
 
 interface FilterSelectionDialogProps {
   connector: Connector;

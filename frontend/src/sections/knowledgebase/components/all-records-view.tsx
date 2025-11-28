@@ -14,30 +14,30 @@ import arrowLeftIcon from '@iconify-icons/mdi/arrow-left';
 import languageCIcon from '@iconify-icons/mdi/language-c';
 import folderIcon from '@iconify-icons/mdi/folder-outline';
 import languageGoIcon from '@iconify-icons/mdi/language-go';
-// File type icons (reusing from knowledge-base-details)
-import filePdfBoxIcon from '@iconify-icons/vscode-icons/file-type-pdf2';
 import languagePhpIcon from '@iconify-icons/mdi/language-php';
 import downloadIcon from '@iconify-icons/mdi/download-outline';
-import fileWordBoxIcon from '@iconify-icons/vscode-icons/file-type-word';
 import trashCanIcon from '@iconify-icons/mdi/trash-can-outline';
 import languageCss3Icon from '@iconify-icons/mdi/language-css3';
 import languageJavaIcon from '@iconify-icons/mdi/language-java';
 import languageRubyIcon from '@iconify-icons/mdi/language-ruby';
 import emailOutlineIcon from '@iconify-icons/mdi/email-outline';
-import fileExcelBoxIcon from '@iconify-icons/vscode-icons/file-type-excel';
-import fileImageBoxIcon from '@iconify-icons/vscode-icons/file-type-image';
 import languageHtml5Icon from '@iconify-icons/mdi/language-html5';
 import fileArchiveBoxIcon from '@iconify-icons/mdi/archive-outline';
 import languagePythonIcon from '@iconify-icons/mdi/language-python';
-import noteTextOutlineIcon from '@iconify-icons/vscode-icons/file-type-text';
 import fileCodeOutlineIcon from '@iconify-icons/mdi/file-code-outline';
+// File type icons (reusing from knowledge-base-details)
+import filePdfBoxIcon from '@iconify-icons/vscode-icons/file-type-pdf2';
 import React, { useRef, useState, useEffect, useCallback } from 'react';
-import languageMarkdownIcon from '@iconify-icons/vscode-icons/file-type-markdown';
+import fileWordBoxIcon from '@iconify-icons/vscode-icons/file-type-word';
 import fileMusicOutlineIcon from '@iconify-icons/mdi/file-music-outline';
 import fileVideoOutlineIcon from '@iconify-icons/mdi/file-video-outline';
-import filePowerpointBoxIcon from '@iconify-icons/vscode-icons/file-type-powerpoint';
+import fileExcelBoxIcon from '@iconify-icons/vscode-icons/file-type-excel';
+import fileImageBoxIcon from '@iconify-icons/vscode-icons/file-type-image';
 import languageJavascriptIcon from '@iconify-icons/mdi/language-javascript';
+import noteTextOutlineIcon from '@iconify-icons/vscode-icons/file-type-text';
 import fileDocumentOutlineIcon from '@iconify-icons/mdi/file-document-outline';
+import languageMarkdownIcon from '@iconify-icons/vscode-icons/file-type-markdown';
+import filePowerpointBoxIcon from '@iconify-icons/vscode-icons/file-type-powerpoint';
 
 import { DataGrid } from '@mui/x-data-grid';
 import {
@@ -66,10 +66,11 @@ import {
 } from '@mui/material';
 
 import { KnowledgeBaseAPI } from '../services/api';
+import { ORIGIN } from '../constants/knowledge-search';
 import DeleteRecordDialog from '../delete-record-dialog';
 import KnowledgeBaseSideBar from '../knowledge-base-sidebar';
-import { Filters } from '../types/knowledge-base';
-import { ORIGIN } from '../constants/knowledge-search';
+
+import type { Filters } from '../types/knowledge-base';
 
 // Import the Filters type from the sidebar to ensure compatibility
 

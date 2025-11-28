@@ -1,34 +1,36 @@
 // src/sections/qna/agents/components/flow-builder-header.tsx
-import React, { useState } from 'react';
-import {
-  Box,
-  Typography,
-  IconButton,
-  Tooltip,
-  TextField,
-  Button,
-  Stack,
-  Breadcrumbs,
-  Link,
-  useTheme,
-  alpha,
-  CircularProgress,
-  Snackbar,
-  Alert,
-  useMediaQuery,
-  ButtonGroup,
-  Chip,
-} from '@mui/material';
 import { Icon } from '@iconify/react';
-import saveIcon from '@iconify-icons/mdi/content-save';
+import React, { useState } from 'react';
 import homeIcon from '@iconify-icons/mdi/home';
 import menuIcon from '@iconify-icons/mdi/menu';
-import sparklesIcon from '@iconify-icons/mdi/auto-awesome';
-import fileIcon from '@iconify-icons/mdi/file-document-outline';
+import saveIcon from '@iconify-icons/mdi/content-save';
 import shareIcon from '@iconify-icons/mdi/share-outline';
 import closeIcon from '@iconify-icons/eva/close-outline';
-import type { AgentBuilderHeaderProps } from '../../types/agent';
+import sparklesIcon from '@iconify-icons/mdi/auto-awesome';
+import fileIcon from '@iconify-icons/mdi/file-document-outline';
+
+import {
+  Box,
+  Link,
+  Chip,
+  Stack,
+  alpha,
+  Alert,
+  Button,
+  Tooltip,
+  useTheme,
+  Snackbar,
+  TextField,
+  IconButton,
+  Breadcrumbs,
+  ButtonGroup,
+  useMediaQuery,
+  CircularProgress,
+} from '@mui/material';
+
 import AgentPermissionsDialog from './agent-permissions-dialog';
+
+import type { AgentBuilderHeaderProps } from '../../types/agent';
 
 type SnackbarSeverity = 'success' | 'error' | 'warning' | 'info';
 

@@ -1,115 +1,105 @@
 // src/sections/agents/components/flow-builder-sidebar.tsx
-import React, { useState, useMemo } from 'react';
-import {
-  Box,
-  Typography,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  TextField,
-  Collapse,
-  useTheme,
-  alpha,
-  CircularProgress,
-  InputAdornment,
-} from '@mui/material';
 import { Icon } from '@iconify/react';
-
-// Basic UI icons
-import chevronDownIcon from '@iconify-icons/mdi/chevron-down';
-import chevronRightIcon from '@iconify-icons/mdi/chevron-right';
-import searchIcon from '@iconify-icons/mdi/magnify';
-import clearIcon from '@iconify-icons/mdi/close';
-import inputOutputIcon from '@iconify-icons/mdi/swap-horizontal';
-
-// Category icons
-import agentIcon from '@iconify-icons/mdi/robot-outline';
+import sendIcon from '@iconify-icons/mdi/send';
 import modelIcon from '@iconify-icons/mdi/chip';
-import dataIcon from '@iconify-icons/mdi/database-outline';
-import vectorIcon from '@iconify-icons/mdi/vector-triangle';
-import processingIcon from '@iconify-icons/mdi/lightning-bolt';
-import bundleIcon from '@iconify-icons/mdi/package-variant';
-import cloudIcon from '@iconify-icons/mdi/cloud-outline';
-import applicationIcon from '@iconify-icons/mdi/application';
-
+import React, { useMemo, useState } from 'react';
+import clearIcon from '@iconify-icons/mdi/close';
 // Communication & Email icons
 import replyIcon from '@iconify-icons/mdi/reply';
+import emailIcon from '@iconify-icons/mdi/email';
+import equalIcon from '@iconify-icons/mdi/equal';
+import jiraIcon from '@iconify-icons/logos/jira';
+import uploadIcon from '@iconify-icons/mdi/upload';
+import githubIcon from '@iconify-icons/mdi/github';
+import searchIcon from '@iconify-icons/mdi/magnify';
+import notionIcon from '@iconify-icons/logos/notion';
+import calendarIcon from '@iconify-icons/mdi/calendar';
+import downloadIcon from '@iconify-icons/mdi/download';
+// Math & calculation icons
+import divisionIcon from '@iconify-icons/mdi/division';
+import slackIcon from '@iconify-icons/logos/slack-icon';
+// Category icons
+import agentIcon from '@iconify-icons/mdi/robot-outline';
+import cloudIcon from '@iconify-icons/mdi/cloud-outline';
+import paperclipIcon from '@iconify-icons/mdi/paperclip';
+import googleDocsIcon from '@iconify-icons/logos/google';
 import emailSendIcon from '@iconify-icons/mdi/email-send';
 import emailEditIcon from '@iconify-icons/mdi/email-edit';
-import emailSearchIcon from '@iconify-icons/mdi/email-search';
 import emailOpenIcon from '@iconify-icons/mdi/email-open';
-import emailIcon from '@iconify-icons/mdi/email';
-import paperclipIcon from '@iconify-icons/mdi/paperclip';
-import sendIcon from '@iconify-icons/mdi/send';
+import dataIcon from '@iconify-icons/mdi/database-outline';
+import calculatorIcon from '@iconify-icons/mdi/calculator';
+import vectorIcon from '@iconify-icons/mdi/vector-triangle';
+import bundleIcon from '@iconify-icons/mdi/package-variant';
+import bugOutlineIcon from '@iconify-icons/mdi/bug-outline';
+import sourcePullIcon from '@iconify-icons/mdi/source-pull';
+import cogOutlineIcon from '@iconify-icons/mdi/cog-outline';
+import applicationIcon from '@iconify-icons/mdi/application';
+import confluenceIcon from '@iconify-icons/logos/confluence';
+// Basic UI icons
+import chevronDownIcon from '@iconify-icons/mdi/chevron-down';
+import emailSearchIcon from '@iconify-icons/mdi/email-search';
 import sendOutlineIcon from '@iconify-icons/mdi/send-outline';
-
+import googleMeetIcon from '@iconify-icons/logos/google-meet';
+import processingIcon from '@iconify-icons/mdi/lightning-bolt';
+import chevronRightIcon from '@iconify-icons/mdi/chevron-right';
 // Calendar icons
 import calendarPlusIcon from '@iconify-icons/mdi/calendar-plus';
 import calendarEditIcon from '@iconify-icons/mdi/calendar-edit';
-import calendarRemoveIcon from '@iconify-icons/mdi/calendar-remove';
-import calendarSearchIcon from '@iconify-icons/mdi/calendar-search';
-import calendarClockIcon from '@iconify-icons/mdi/calendar-clock';
-import calendarIcon from '@iconify-icons/mdi/calendar';
-
-// CRUD operation icons
-import plusCircleOutlineIcon from '@iconify-icons/mdi/plus-circle-outline';
-import pencilOutlineIcon from '@iconify-icons/mdi/pencil-outline';
-import deleteOutlineIcon from '@iconify-icons/mdi/delete-outline';
-import downloadOutlineIcon from '@iconify-icons/mdi/download-outline';
-import uploadIcon from '@iconify-icons/mdi/upload';
-import downloadIcon from '@iconify-icons/mdi/download';
-
-// File & folder icons
-import folderPlusOutlineIcon from '@iconify-icons/mdi/folder-plus-outline';
-import folderOutlineIcon from '@iconify-icons/mdi/folder-outline';
-import folderMultipleOutlineIcon from '@iconify-icons/mdi/folder-multiple-outline';
-import fileDocumentOutlineIcon from '@iconify-icons/mdi/file-document-outline';
-import fileDocumentMultipleOutlineIcon from '@iconify-icons/mdi/file-document-multiple-outline';
-import shareVariantOutlineIcon from '@iconify-icons/mdi/share-variant-outline';
-
-// Development & code icons
-import sourceRepositoryIcon from '@iconify-icons/mdi/source-repository';
-import bugOutlineIcon from '@iconify-icons/mdi/bug-outline';
-import sourcePullIcon from '@iconify-icons/mdi/source-pull';
 import sourceCommitIcon from '@iconify-icons/mdi/source-commit';
 import sourceBranchIcon from '@iconify-icons/mdi/source-branch';
-
+// Brand/app specific icons
+import googleGmailIcon from '@iconify-icons/logos/google-gmail';
+import googleDriveIcon from '@iconify-icons/logos/google-drive';
+import inputOutputIcon from '@iconify-icons/mdi/swap-horizontal';
+import calendarClockIcon from '@iconify-icons/mdi/calendar-clock';
+import pencilOutlineIcon from '@iconify-icons/mdi/pencil-outline';
+import deleteOutlineIcon from '@iconify-icons/mdi/delete-outline';
+import folderOutlineIcon from '@iconify-icons/mdi/folder-outline';
+import googleWorkspaceIcon from '@iconify-icons/logos/google-icon';
+import calendarRemoveIcon from '@iconify-icons/mdi/calendar-remove';
+import calendarSearchIcon from '@iconify-icons/mdi/calendar-search';
 // Communication & team icons
 import commentOutlineIcon from '@iconify-icons/mdi/comment-outline';
 import accountOutlineIcon from '@iconify-icons/mdi/account-outline';
-import accountPlusOutlineIcon from '@iconify-icons/mdi/account-plus-outline';
+import downloadOutlineIcon from '@iconify-icons/mdi/download-outline';
+import googleCalendarIcon from '@iconify-icons/logos/google-calendar';
 import poundBoxOutlineIcon from '@iconify-icons/mdi/pound-box-outline';
-
+// Development & code icons
+import sourceRepositoryIcon from '@iconify-icons/mdi/source-repository';
+// CRUD operation icons
+import plusCircleOutlineIcon from '@iconify-icons/mdi/plus-circle-outline';
+// File & folder icons
+import folderPlusOutlineIcon from '@iconify-icons/mdi/folder-plus-outline';
 // Utility icons
 import formatListBulletIcon from '@iconify-icons/mdi/format-list-bulleted';
-import arrowRightCircleOutlineIcon from '@iconify-icons/mdi/arrow-right-circle-outline';
+import microsoftOnedriveIcon from '@iconify-icons/logos/microsoft-onedrive';
+import accountPlusOutlineIcon from '@iconify-icons/mdi/account-plus-outline';
 import closeCircleOutlineIcon from '@iconify-icons/mdi/close-circle-outline';
 import minusCircleOutlineIcon from '@iconify-icons/mdi/minus-circle-outline';
+import fileDocumentOutlineIcon from '@iconify-icons/mdi/file-document-outline';
+import shareVariantOutlineIcon from '@iconify-icons/mdi/share-variant-outline';
+import folderMultipleOutlineIcon from '@iconify-icons/mdi/folder-multiple-outline';
+import arrowRightCircleOutlineIcon from '@iconify-icons/mdi/arrow-right-circle-outline';
+import fileDocumentMultipleOutlineIcon from '@iconify-icons/mdi/file-document-multiple-outline';
 
-// Math & calculation icons
-import divisionIcon from '@iconify-icons/mdi/division';
-import equalIcon from '@iconify-icons/mdi/equal';
-
-// Brand/app specific icons
-import googleGmailIcon from '@iconify-icons/logos/google-gmail';
-import googleCalendarIcon from '@iconify-icons/logos/google-calendar';
-import googleDriveIcon from '@iconify-icons/logos/google-drive';
-import googleWorkspaceIcon from '@iconify-icons/logos/google-icon';
-import microsoftOnedriveIcon from '@iconify-icons/logos/microsoft-onedrive';
-import confluenceIcon from '@iconify-icons/logos/confluence';
-import githubIcon from '@iconify-icons/mdi/github';
-import jiraIcon from '@iconify-icons/logos/jira';
-import slackIcon from '@iconify-icons/logos/slack-icon';
-import cogOutlineIcon from '@iconify-icons/mdi/cog-outline';
-import calculatorIcon from '@iconify-icons/mdi/calculator';
-import googleDocsIcon from '@iconify-icons/logos/google';
-import googleMeetIcon from '@iconify-icons/logos/google-meet';
-import notionIcon from '@iconify-icons/logos/notion';
-import { useConnectors } from '../../../../accountdetails/connectors/context';
+import {
+  Box,
+  List,
+  alpha,
+  Drawer,
+  ListItem,
+  Collapse,
+  useTheme,
+  TextField,
+  Typography,
+  IconButton,
+  InputAdornment,
+  CircularProgress,
+} from '@mui/material';
 
 // Utility functions
 import { normalizeDisplayName } from '../../utils/agent';
+import { useConnectors } from '../../../../accountdetails/connectors/context';
 
 interface NodeTemplate {
   type: string;

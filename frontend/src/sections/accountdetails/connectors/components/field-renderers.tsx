@@ -1,26 +1,27 @@
 import React from 'react';
+import eyeIcon from '@iconify-icons/mdi/eye';
+import eyeOffIcon from '@iconify-icons/mdi/eye-off';
+
+import { alpha, useTheme } from '@mui/material/styles';
 import {
-  TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  FormControlLabel,
-  Checkbox,
-  FormGroup,
-  Chip,
   Box,
+  Chip,
+  Select,
+  Button,
+  MenuItem,
+  Checkbox,
+  TextField,
+  InputLabel,
   Typography,
+  IconButton,
+  FormControl,
   Autocomplete,
   FormHelperText,
   InputAdornment,
-  IconButton,
-  Button,
+  FormControlLabel,
 } from '@mui/material';
+
 import { Iconify } from 'src/components/iconify';
-import { useTheme, alpha } from '@mui/material/styles';
-import eyeIcon from '@iconify-icons/mdi/eye';
-import eyeOffIcon from '@iconify-icons/mdi/eye-off';
 
 interface BaseFieldProps {
   field: any;

@@ -1,18 +1,20 @@
 // src/sections/agents/utils/agent-utils.ts
+import type { Theme } from '@mui/material/styles';
 import type {
   Agent,
   AgentFormData,
-  AgentTemplateFormData,
   AgentFilterOptions,
+  AgentTemplateFormData,
 } from 'src/types/agent';
 
-import chatIcon from '@iconify-icons/mdi/chat';
-import databaseIcon from '@iconify-icons/mdi/database';
-import emailIcon from '@iconify-icons/mdi/email';
 import apiIcon from '@iconify-icons/mdi/api';
+import chatIcon from '@iconify-icons/mdi/chat';
 import toolIcon from '@iconify-icons/mdi/tools';
+import emailIcon from '@iconify-icons/mdi/email';
+import databaseIcon from '@iconify-icons/mdi/database';
 import calculatorIcon from '@iconify-icons/mdi/calculator';
-import { alpha, Theme } from '@mui/material/styles';
+
+import { alpha } from '@mui/material/styles';
 // Validation functions
 export const validateAgentForm = (data: AgentFormData): Record<string, string> => {
   const errors: Record<string, string> = {};

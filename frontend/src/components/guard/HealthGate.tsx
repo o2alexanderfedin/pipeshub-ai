@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
-import { LoadingScreen } from 'src/components/loading-screen';
 import { useServicesHealth } from 'src/context/ServicesHealthContext';
+
+import { LoadingScreen } from 'src/components/loading-screen';
 
 // ----------------------------------------------------------------------
 

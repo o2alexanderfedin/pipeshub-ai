@@ -8,6 +8,7 @@ import { useAdmin } from 'src/context/AdminContext';
 import { DashboardLayout } from 'src/layouts/dashboard';
 
 import { LoadingScreen } from 'src/components/loading-screen';
+
 import { ConnectorProvider } from 'src/sections/accountdetails/connectors/context';
 
 import { AuthGuard } from 'src/auth/guard';

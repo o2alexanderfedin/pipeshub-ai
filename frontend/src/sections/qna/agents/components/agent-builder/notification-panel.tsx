@@ -1,6 +1,8 @@
 // src/sections/qna/agents/components/notification-panel.tsx
 import React from 'react';
-import { Alert, Fade } from '@mui/material';
+
+import { Fade, Alert } from '@mui/material';
+
 import type { AgentBuilderNotificationPanelProps } from '../../types/agent';
 
 const AgentBuilderNotificationPanel: React.FC<AgentBuilderNotificationPanelProps> = ({

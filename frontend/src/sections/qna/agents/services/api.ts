@@ -1,15 +1,15 @@
 // src/sections/agents/services/agent-api-service.ts
-import axios from 'src/utils/axios';
+import type { KBPermission } from 'src/sections/knowledgebase/types/kb';
 import type {
   Agent,
+  AgentStats,
   AgentTemplate,
   AgentFormData,
-  AgentTemplateFormData,
   AgentConversation,
-  AgentFilterOptions,
-  AgentStats,
+  AgentTemplateFormData,
 } from 'src/types/agent';
-import { KBPermission } from 'src/sections/knowledgebase/types/kb';
+
+import axios from 'src/utils/axios';
 
 export interface PaginationParams {
   page?: number;

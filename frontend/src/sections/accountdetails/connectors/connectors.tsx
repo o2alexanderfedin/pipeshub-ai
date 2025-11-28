@@ -1,39 +1,43 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import {
-  Paper,
-  Container,
-  Box,
-  Typography,
-  alpha,
-  useTheme,
-  Grid,
-  InputAdornment,
-  TextField,
-  Skeleton,
-  Alert,
-  Snackbar,
-  Button,
-  Chip,
-  Fade,
-  Stack,
-  Divider,
-  IconButton,
-} from '@mui/material';
-import { Iconify } from 'src/components/iconify';
+import type { SnackbarState } from 'src/types/chat-sidebar';
+
 import infoIcon from '@iconify-icons/mdi/info-circle';
-import arrowRightIcon from '@iconify-icons/mdi/arrow-right';
 import magniferIcon from '@iconify-icons/mdi/magnify';
-import linkBrokenIcon from '@iconify-icons/mdi/link-off';
 import linkIcon from '@iconify-icons/mdi/link-variant';
-import listIcon from '@iconify-icons/mdi/format-list-bulleted';
-import checkCircleIcon from '@iconify-icons/mdi/check-circle';
-import clockCircleIcon from '@iconify-icons/mdi/clock-outline';
 import settingsIcon from '@iconify-icons/mdi/settings';
 import clearIcon from '@iconify-icons/mdi/close-circle';
-import { SnackbarState } from 'src/types/chat-sidebar';
+import linkBrokenIcon from '@iconify-icons/mdi/link-off';
+import React, { useMemo, useState, useEffect } from 'react';
+import checkCircleIcon from '@iconify-icons/mdi/check-circle';
+import listIcon from '@iconify-icons/mdi/format-list-bulleted';
+import clockCircleIcon from '@iconify-icons/mdi/clock-outline';
+
+import {
+  Box,
+  Grid,
+  Chip,
+  Fade,
+  Paper,
+  alpha,
+  Alert,
+  Stack,
+  Button,
+  Divider,
+  useTheme,
+  Skeleton,
+  Snackbar,
+  Container,
+  TextField,
+  Typography,
+  IconButton,
+  InputAdornment,
+} from '@mui/material';
+
+import { Iconify } from 'src/components/iconify';
+
 import { ConnectorApiService } from './services/api';
-import { Connector } from './types/types';
 import ConnectorCard from './components/connector-card';
+
+import type { Connector } from './types/types';
 
 const Connectors = () => {
   const [connectors, setConnectors] = useState<Connector[]>([]);

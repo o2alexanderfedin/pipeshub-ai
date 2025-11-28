@@ -40,6 +40,7 @@ class ChatQuery(BaseModel):
     modelName: Optional[str] = None  # e.g., "gpt-4o-mini", "claude-3-5-sonnet", "llama3.2"
     chatMode: Optional[str] = "standard"  # "quick", "analysis", "deep_research", "creative", "precise"
     mode: Optional[str] = "json"  # "json" for full metadata, "simple" for answer only
+    verification_enabled: Optional[bool] = False  # Enable SMT verification for chunks
 
 
 # Dependency injection functions
@@ -269,6 +270,46 @@ async def process_chat_query_with_status(
         final_results = flattened_results
 
     final_results = sorted(final_results, key=lambda x: (x['virtual_record_id'], x['block_index']))
+
+    # Trigger verification if enabled
+    if query_info.verification_enabled and len(final_results) > 0:
+        try:
+            from app.verification.publisher import VerificationPublisher
+
+            # Get Kafka brokers from config
+            kafka_brokers = config_service.get_config_value_by_path(
+                "kafka.brokers", "kafka:9092"
+            )
+
+            # Create publisher and publish verification request
+            publisher = VerificationPublisher(kafka_brokers=kafka_brokers, logger=logger)
+            await publisher.start()
+
+            # Prepare chunks for verification
+            chunks_to_verify = [
+                {
+                    "chunk_id": result.get("_id", ""),
+                    "content": result.get("content", ""),
+                    "metadata": result.get("metadata", {}),
+                }
+                for result in final_results[:10]  # Limit to top 10 chunks
+            ]
+
+            # Publish async (fire and forget)
+            await publisher.publish_verification_request(
+                chunks=chunks_to_verify,
+                query=query_info.query,
+                user_id=user_id,
+                org_id=org_id,
+                session_id=None,
+            )
+
+            await publisher.stop()
+            logger.info(f"✅ Published {len(chunks_to_verify)} chunks for verification")
+
+        except Exception as e:
+            # Don't fail the request if verification fails
+            logger.error(f"❌ Failed to publish verification request: {str(e)}")
 
     # Prepare user context
     send_user_info = request.query_params.get('sendUserInfo', True)

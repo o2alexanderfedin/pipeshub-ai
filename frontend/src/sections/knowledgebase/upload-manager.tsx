@@ -1,15 +1,15 @@
 // components/upload/simplified-upload-manager.tsx
 import { Icon } from '@iconify/react';
 import { useDropzone } from 'react-dropzone';
-import React, { useRef, useState, useMemo, useEffect } from 'react';
+import closeIcon from '@iconify-icons/mdi/close';
 import cloudIcon from '@iconify-icons/mdi/cloud-upload';
 import folderIcon from '@iconify-icons/mdi/folder-outline';
 import filePlusIcon from '@iconify-icons/mdi/file-plus-outline';
-import closeIcon from '@iconify-icons/mdi/close';
-import folderUploadIcon from '@iconify-icons/mdi/folder-upload-outline';
-import fileDocumentOutlineIcon from '@iconify-icons/mdi/file-document-outline';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import alertCircleIcon from '@iconify-icons/mdi/alert-circle-outline';
 import checkCircleIcon from '@iconify-icons/mdi/check-circle-outline';
+import folderUploadIcon from '@iconify-icons/mdi/folder-upload-outline';
+import fileDocumentOutlineIcon from '@iconify-icons/mdi/file-document-outline';
 
 import {
   Box,
@@ -20,12 +20,12 @@ import {
   Dialog,
   useTheme,
   Typography,
+  IconButton,
   DialogTitle,
   DialogContent,
   DialogActions,
   LinearProgress,
   CircularProgress,
-  IconButton,
 } from '@mui/material';
 
 import axios from 'src/utils/axios';

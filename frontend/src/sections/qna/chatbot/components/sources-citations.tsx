@@ -1,29 +1,34 @@
-import React, { useMemo, useState, useCallback } from 'react';
-import { Icon, IconifyIcon } from '@iconify/react';
-import eyeIcon from '@iconify-icons/mdi/eye-outline';
-import downIcon from '@iconify-icons/mdi/chevron-down';
+import type { IconifyIcon } from '@iconify/react';
+import type { Record } from 'src/types/chat-message';
+import type { CustomCitation } from 'src/types/chat-bot';
+import type { VerificationResult } from 'src/types/verification.types';
+
+import { Icon } from '@iconify/react';
 import upIcon from '@iconify-icons/mdi/chevron-up';
-import rightIcon from '@iconify-icons/mdi/chevron-right';
-import fileDocIcon from '@iconify-icons/mdi/file-document-outline';
-import folderIcon from '@iconify-icons/mdi/folder-outline';
+import eyeIcon from '@iconify-icons/mdi/eye-outline';
 import linkIcon from '@iconify-icons/mdi/open-in-new';
+import downIcon from '@iconify-icons/mdi/chevron-down';
+import databaseIcon from '@iconify-icons/mdi/database';
+import rightIcon from '@iconify-icons/mdi/chevron-right';
+import folderIcon from '@iconify-icons/mdi/folder-outline';
+import React, { useMemo, useState, useCallback } from 'react';
+import zipIcon from '@iconify-icons/vscode-icons/file-type-zip';
 import pdfIcon from '@iconify-icons/vscode-icons/file-type-pdf2';
 import docIcon from '@iconify-icons/vscode-icons/file-type-word';
-import xlsIcon from '@iconify-icons/vscode-icons/file-type-excel';
-import pptIcon from '@iconify-icons/vscode-icons/file-type-powerpoint';
 import txtIcon from '@iconify-icons/vscode-icons/file-type-text';
-import mdIcon from '@iconify-icons/vscode-icons/file-type-markdown';
+import xlsIcon from '@iconify-icons/vscode-icons/file-type-excel';
 import htmlIcon from '@iconify-icons/vscode-icons/file-type-html';
 import jsonIcon from '@iconify-icons/vscode-icons/file-type-json';
-import zipIcon from '@iconify-icons/vscode-icons/file-type-zip';
+import fileDocIcon from '@iconify-icons/mdi/file-document-outline';
+import mdIcon from '@iconify-icons/vscode-icons/file-type-markdown';
 import imageIcon from '@iconify-icons/vscode-icons/file-type-image';
-import databaseIcon from '@iconify-icons/mdi/database';
+import pptIcon from '@iconify-icons/vscode-icons/file-type-powerpoint';
 
-import { Box, Paper, Stack, Button, Collapse, Typography, alpha, useTheme } from '@mui/material';
+import { Box, Paper, Stack, alpha, Button, Collapse, useTheme, Typography } from '@mui/material';
 
-import type { CustomCitation } from 'src/types/chat-bot';
-import type { Record } from 'src/types/chat-message';
 import { useConnectors } from '../../../accountdetails/connectors/context';
+import { VerificationBadge } from './verification-badge';
+import { VerificationMetadataDrawer } from './verification-metadata-drawer';
 
 // File type configuration with modern icons
 const FILE_CONFIG = {
@@ -397,6 +402,8 @@ const SourcesAndCitations: React.FC<SourcesAndCitationsProps> = ({
   const theme = useTheme();
   const [isFilesExpanded, setIsFilesExpanded] = useState(false);
   const [isCitationsExpanded, setIsCitationsExpanded] = useState(false);
+  const [selectedVerification, setSelectedVerification] = useState<VerificationResult | null>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   // Get connector data from the hook
   const { activeConnectors } = useConnectors();
@@ -615,6 +622,19 @@ const SourcesAndCitations: React.FC<SourcesAndCitationsProps> = ({
                     : citation.content}
                 </Typography>
 
+                {/* Verification Badge */}
+                {citation.verification && (
+                  <Box sx={{ mb: 1.5 }}>
+                    <VerificationBadge
+                      result={citation.verification}
+                      onClick={() => {
+                        setSelectedVerification(citation.verification!);
+                        setDrawerOpen(true);
+                      }}
+                    />
+                  </Box>
+                )}
+
                 {citation.metadata?.recordId && (
                   <Stack direction="row" spacing={1} justifyContent="flex-end">
                     {citation.metadata.extension && isDocViewable(citation.metadata.extension) && (
@@ -708,6 +728,13 @@ const SourcesAndCitations: React.FC<SourcesAndCitationsProps> = ({
           )}
         </Stack>
       )}
+
+      {/* Verification Metadata Drawer */}
+      <VerificationMetadataDrawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        result={selectedVerification}
+      />
     </Box>
   );
 };

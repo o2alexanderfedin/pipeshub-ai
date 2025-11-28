@@ -1,37 +1,39 @@
 // src/sections/agents/components/node-config-dialog.tsx
-import React, { useState, useEffect, useCallback, memo } from 'react';
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  TextField,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Switch,
-  FormControlLabel,
-  Grid,
-  Box,
-  Typography,
-  IconButton,
-  useTheme,
-  alpha,
-  Autocomplete,
-  Chip,
-  Avatar,
-  Stack,
-} from '@mui/material';
 import { Icon } from '@iconify/react';
-import closeIcon from '@iconify-icons/eva/close-outline';
 import cogIcon from '@iconify-icons/mdi/cog';
+import closeIcon from '@iconify-icons/eva/close-outline';
 import personIcon from '@iconify-icons/eva/person-add-fill';
 import accountGroupIcon from '@iconify-icons/mdi/account-group';
 import shieldIcon from '@iconify-icons/mdi/shield-check-outline';
+import React, { memo, useState, useEffect, useCallback } from 'react';
+
+import {
+  Box,
+  Grid,
+  Chip,
+  alpha,
+  Stack,
+  Dialog,
+  Button,
+  Select,
+  Switch,
+  Avatar,
+  MenuItem,
+  useTheme,
+  TextField,
+  Typography,
+  IconButton,
+  DialogTitle,
+  FormControl,
+  Autocomplete,
+  DialogContent,
+  DialogActions,
+  FormControlLabel,
+} from '@mui/material';
+
 import { useUsers } from 'src/context/UserContext';
 import { useGroups } from 'src/context/GroupsContext';
+
 import { userChipStyle, groupChipStyle } from '../../utils/agent';
 
 interface NodeConfigDialogProps {

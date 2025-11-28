@@ -1,11 +1,14 @@
-import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect, useCallback } from 'react';
+
 import { useAccountType } from 'src/hooks/use-account-type';
-import { Connector, ConnectorConfig } from '../types/types';
-import { ConnectorApiService } from '../services/api';
-import { CrawlingManagerApi } from '../services/crawling-manager';
-import { buildCronFromSchedule } from '../utils/cron';
-import { evaluateConditionalDisplay } from '../utils/conditional-display';
+
 import { isNoneAuthType } from '../utils/auth';
+import { ConnectorApiService } from '../services/api';
+import { buildCronFromSchedule } from '../utils/cron';
+import { CrawlingManagerApi } from '../services/crawling-manager';
+import { evaluateConditionalDisplay } from '../utils/conditional-display';
+
+import type { Connector, ConnectorConfig } from '../types/types';
 
 interface FormData {
   auth: Record<string, any>;

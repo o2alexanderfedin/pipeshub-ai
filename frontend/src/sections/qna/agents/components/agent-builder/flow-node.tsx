@@ -1,33 +1,35 @@
-  import React, { useState, useCallback, useEffect } from 'react';
+  import { Icon } from '@iconify/react';
+import cogIcon from '@iconify-icons/mdi/cog';
+import tuneIcon from '@iconify-icons/mdi/tune';
+import toolIcon from '@iconify-icons/mdi/tools';
+import brainIcon from '@iconify-icons/mdi/brain';
+import pencilIcon from '@iconify-icons/mdi/pencil';
+import databaseIcon from '@iconify-icons/mdi/database';
+import scriptIcon from '@iconify-icons/mdi/script-text';
+import closeIcon from '@iconify-icons/eva/close-outline';
+import cloudIcon from '@iconify-icons/mdi/cloud-outline';
+import informationIcon from '@iconify-icons/mdi/information';
+import packageIcon from '@iconify-icons/mdi/package-variant';
+import messageTextIcon from '@iconify-icons/mdi/message-text';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Handle, Position, useStore, useReactFlow } from '@xyflow/react';
+
 import {
   Box,
   Card,
-  Typography,
-  useTheme,
-  alpha,
   Chip,
-  IconButton,
-  TextField,
+  alpha,
   Dialog,
+  Button,
+  useTheme,
+  TextField,
+  Typography,
+  IconButton,
   DialogTitle,
   DialogContent,
   DialogActions,
-  Button,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
-import brainIcon from '@iconify-icons/mdi/brain';
-import toolIcon from '@iconify-icons/mdi/tools';
-import databaseIcon from '@iconify-icons/mdi/database';
-import closeIcon from '@iconify-icons/eva/close-outline';
-import scriptIcon from '@iconify-icons/mdi/script-text';
-import pencilIcon from '@iconify-icons/mdi/pencil';
-import messageTextIcon from '@iconify-icons/mdi/message-text';
-import informationIcon from '@iconify-icons/mdi/information';
-import packageIcon from '@iconify-icons/mdi/package-variant';
-import cogIcon from '@iconify-icons/mdi/cog';
-import cloudIcon from '@iconify-icons/mdi/cloud-outline';
-import tuneIcon from '@iconify-icons/mdi/tune';
+
 import { formattedProvider, normalizeDisplayName } from '../../utils/agent';
 
 interface FlowNodeData extends Record<string, unknown> {

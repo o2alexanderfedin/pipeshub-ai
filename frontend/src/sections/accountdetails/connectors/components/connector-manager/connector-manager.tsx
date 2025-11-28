@@ -1,35 +1,39 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  Container,
-  Box,
-  Alert,
-  AlertTitle,
-  Typography,
-  Snackbar,
-  alpha,
-  useTheme,
-  Stack,
-  Grid,
-  Button,
-  Paper,
-} from '@mui/material';
-import { Iconify } from 'src/components/iconify';
+import refreshIcon from '@iconify-icons/mdi/refresh';
 import infoIcon from '@iconify-icons/eva/info-outline';
 import lockIcon from '@iconify-icons/mdi/lock-outline';
-import errorOutlineIcon from '@iconify-icons/mdi/error-outline';
 import settingsIcon from '@iconify-icons/mdi/settings';
-import refreshIcon from '@iconify-icons/mdi/refresh';
 import arrowBackIcon from '@iconify-icons/mdi/arrow-left';
+import errorOutlineIcon from '@iconify-icons/mdi/error-outline';
+
+import {
+  Box,
+  Grid,
+  Alert,
+  alpha,
+  Stack,
+  Paper,
+  Button,
+  Snackbar,
+  useTheme,
+  Container,
+  AlertTitle,
+  Typography,
+} from '@mui/material';
+
 import { useAccountType } from 'src/hooks/use-account-type';
-import ConnectorStatistics from '../connector-stats';
-import ConnectorConfigForm from '../connector-config/connector-config-form';
-import FilterSelectionDialog from '../filter-selection-dialog';
-import { useConnectorManager } from '../../hooks/use-connector-manager';
+
+import { Iconify } from 'src/components/iconify';
+
 import ConnectorHeader from './connector-header';
+import ConnectorStatistics from '../connector-stats';
 import ConnectorStatusCard from './connector-status-card';
+import FilterSelectionDialog from '../filter-selection-dialog';
 import ConnectorActionsSidebar from './connector-actions-sidebar';
 import ConnectorLoadingSkeleton from './connector-loading-skeleton';
+import { useConnectorManager } from '../../hooks/use-connector-manager';
+import ConnectorConfigForm from '../connector-config/connector-config-form';
 
 interface ConnectorManagerProps {
   showStats?: boolean;

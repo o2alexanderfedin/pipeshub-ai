@@ -214,7 +214,7 @@ class LocalFilesystemConnector(BaseConnector):
             auth_config = config.get("auth", {})
 
             # Use default if watch_path is empty or not provided
-            self.watch_path = auth_config.get("watch_path", "") or "/data/pipeshub/test-files"
+            self.watch_path = auth_config.get("watch_path", "") or "/data/local-files"
             debounce_str = auth_config.get("debounce_seconds", "1.0")
             try:
                 self.debounce_seconds = float(debounce_str)

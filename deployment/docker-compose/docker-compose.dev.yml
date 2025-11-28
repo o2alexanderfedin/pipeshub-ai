@@ -94,6 +94,7 @@ services:
     volumes:
       - pipeshub_data:/data/pipeshub
       - pipeshub_root_local:/root/.local
+      - /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig:/data/local-files:ro
     extra_hosts:
       - "host.docker.internal:host-gateway"
 

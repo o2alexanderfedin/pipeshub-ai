@@ -1,12 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react';
 import { Icon } from '@iconify/react';
 import addIcon from '@iconify-icons/mdi/plus';
 import closeIcon from '@iconify-icons/mdi/close';
 import peopleIcon from '@iconify-icons/eva/people-fill';
+import teamIcon from '@iconify-icons/mdi/account-group';
 import editIcon from '@iconify-icons/mdi/pencil-outline';
 import deleteIcon from '@iconify-icons/mdi/delete-outline';
 import searchIcon from '@iconify-icons/eva/search-outline';
-import teamIcon from '@iconify-icons/mdi/account-group';
+import React, { useMemo, useState, useEffect } from 'react';
 import warningIcon from '@iconify-icons/eva/alert-triangle-outline';
 
 import {

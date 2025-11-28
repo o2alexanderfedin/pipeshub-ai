@@ -1,4 +1,6 @@
+import type { Agent } from 'src/types/agent';
 import type { Conversation } from 'src/types/chat-bot';
+import type { Connector } from 'src/sections/accountdetails/connectors/types/types';
 import type {
   SnackbarState,
   ChatSidebarProps,
@@ -8,15 +10,12 @@ import type {
 } from 'src/types/chat-sidebar';
 
 import { Icon } from '@iconify/react';
-import editIcon from '@iconify-icons/mdi/edit';
 import menuIcon from '@iconify-icons/mdi/menu';
 import checkIcon from '@iconify-icons/mdi/check';
 import closeIcon from '@iconify-icons/mdi/close';
-import shareIcon from '@iconify-icons/mdi/share';
 import deleteIcon from '@iconify-icons/mdi/delete';
 import chatIcon from '@iconify-icons/mdi/chat-outline';
 import dotsIcon from '@iconify-icons/mdi/dots-vertical';
-import archiveIcon from '@iconify-icons/mdi/archive-outline';
 import messageIcon from '@iconify-icons/mdi/message-outline';
 import emptyIcon from '@iconify-icons/mdi/comment-question-outline';
 import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react';
@@ -29,6 +28,7 @@ import {
   alpha,
   Button,
   Tooltip,
+  Divider,
   ListItem,
   MenuItem,
   Snackbar,
@@ -38,17 +38,14 @@ import {
   IconButton,
   ListItemButton,
   CircularProgress,
-  Divider,
 } from '@mui/material';
 
 import axiosInstance from 'src/utils/axios';
 
-import { Agent } from 'src/types/agent';
-import ArchivedChatsDialog from 'src/sections/qna/chatbot/components/dialogs/archieve-chat-dialog';
 // import ShareConversationDialog from 'src/sections/qna/chatbot/components/dialogs/share-conversation-dialog';
 import { createScrollableContainerStyle } from 'src/sections/qna/chatbot/utils/styles/scrollbar';
+import ArchivedChatsDialog from 'src/sections/qna/chatbot/components/dialogs/archieve-chat-dialog';
 import DeleteConversationDialog from 'src/sections/qna/chatbot/components/dialogs/delete-conversation-dialog';
-import { Connector } from 'src/sections/accountdetails/connectors/types/types';
 
 interface AgentChatSidebarProps extends ChatSidebarProps {
   agent: Agent | null;

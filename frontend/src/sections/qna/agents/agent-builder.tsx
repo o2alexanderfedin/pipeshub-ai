@@ -1,33 +1,35 @@
 // src/sections/qna/agents/components/flow-agent-builder.tsx
-import React, { useCallback, useEffect, useState } from 'react';
-import { useNodesState, useEdgesState, addEdge, Connection, Node, Edge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import { Box, useTheme, alpha } from '@mui/material';
 
+import type { Node, Edge, Connection } from '@xyflow/react';
+import type { AgentFormData, AgentTemplate } from 'src/types/agent';
+
+import chatIcon from '@iconify-icons/mdi/chat';
 // Icons
 import brainIcon from '@iconify-icons/mdi/brain';
-import chatIcon from '@iconify-icons/mdi/chat';
-import sparklesIcon from '@iconify-icons/mdi/auto-awesome';
 import replyIcon from '@iconify-icons/mdi/reply';
+import sparklesIcon from '@iconify-icons/mdi/auto-awesome';
+import React, { useState, useEffect, useCallback } from 'react';
+import { addEdge, useNodesState, useEdgesState } from '@xyflow/react';
 
-import type { AgentFormData, AgentTemplate } from 'src/types/agent';
-import type { AgentBuilderProps, NodeData } from './types/agent';
+import { Box, alpha, useTheme } from '@mui/material';
+
+import AgentApiService from './services/api';
+import TemplateSelector from './components/template-selector';
+// Components
+import AgentBuilderHeader from './components/agent-builder/header';
 // Custom hooks
 import { useAgentBuilderData } from './hooks/agent-builder/useAgentBuilderData';
 import { useAgentBuilderState } from './hooks/agent-builder/useAgentBuilderState';
-import { useAgentBuilderNodeTemplates } from './hooks/agent-builder/useNodeTemplates';
-import { useAgentBuilderReconstruction } from './hooks/agent-builder/useFlowReconstruction';
-
-// Components
-import AgentBuilderHeader from './components/agent-builder/header';
 import AgentBuilderCanvasWrapper from './components/agent-builder/canvas-wrapper';
-import AgentBuilderNotificationPanel from './components/agent-builder/notification-panel';
 import AgentBuilderDialogManager from './components/agent-builder/dialog-manager';
-import TemplateSelector from './components/template-selector';
-
+import { useAgentBuilderNodeTemplates } from './hooks/agent-builder/useNodeTemplates';
+import AgentBuilderNotificationPanel from './components/agent-builder/notification-panel';
+import { useAgentBuilderReconstruction } from './hooks/agent-builder/useFlowReconstruction';
 // Utils and types
-import { extractAgentConfigFromFlow, normalizeDisplayName, formattedProvider } from './utils/agent';
-import AgentApiService from './services/api';
+import { formattedProvider, normalizeDisplayName, extractAgentConfigFromFlow } from './utils/agent';
+
+import type { NodeData, AgentBuilderProps } from './types/agent';
 
 const AgentBuilder: React.FC<AgentBuilderProps> = ({ editingAgent, onSuccess, onClose }) => {
   const theme = useTheme();

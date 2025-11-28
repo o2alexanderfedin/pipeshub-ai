@@ -1,21 +1,22 @@
 // src/sections/qna/agents/hooks/useNodeTemplates.ts
 import { useMemo } from 'react';
-import brainIcon from '@iconify-icons/mdi/brain';
-import chatIcon from '@iconify-icons/mdi/chat';
-import databaseIcon from '@iconify-icons/mdi/database';
-import emailIcon from '@iconify-icons/mdi/email';
 import apiIcon from '@iconify-icons/mdi/api';
-import sparklesIcon from '@iconify-icons/mdi/auto-awesome';
+import chatIcon from '@iconify-icons/mdi/chat';
+import brainIcon from '@iconify-icons/mdi/brain';
 import replyIcon from '@iconify-icons/mdi/reply';
+import databaseIcon from '@iconify-icons/mdi/database';
+import sparklesIcon from '@iconify-icons/mdi/auto-awesome';
+
 import { useConnectors } from '../../../../accountdetails/connectors/context';
 import {
-  groupToolsByApp,
-  getAppDisplayName,
   getAppIcon,
   truncateText,
+  groupToolsByApp,
+  getAppDisplayName,
   normalizeDisplayName,
 } from '../../utils/agent';
-import type { UseAgentBuilderNodeTemplatesReturn, NodeTemplate } from '../../types/agent';
+
+import type { NodeTemplate, UseAgentBuilderNodeTemplatesReturn } from '../../types/agent';
 
 export const useAgentBuilderNodeTemplates = (
   availableTools: any[],

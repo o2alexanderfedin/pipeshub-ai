@@ -1,5 +1,6 @@
 import axios from "src/utils/axios";
-import { Connector, ConnectorConfig } from "../types/types";
+
+import type { Connector, ConnectorConfig } from "../types/types";
 
 const BASE_URL = '/api/v1/connectors';
 

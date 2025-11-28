@@ -1,6 +1,8 @@
 // src/sections/qna/agents/hooks/useFlowBuilderState.ts
-import { useState } from 'react';
 import type { Agent } from 'src/types/agent';
+
+import { useState } from 'react';
+
 import type { UseAgentBuilderStateReturn } from '../../types/agent';
 
 export const useAgentBuilderState = (editingAgent?: Agent | { _key: string } | null): UseAgentBuilderStateReturn => {

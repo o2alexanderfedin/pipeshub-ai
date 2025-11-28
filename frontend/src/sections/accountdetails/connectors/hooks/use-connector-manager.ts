@@ -1,9 +1,11 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { Connector, ConnectorConfig } from '../types/types';
+import { useRef, useState, useEffect, useCallback } from 'react';
+
 import { ConnectorApiService } from '../services/api';
-import { CrawlingManagerApi } from '../services/crawling-manager';
 import { buildCronFromSchedule } from '../utils/cron';
+import { CrawlingManagerApi } from '../services/crawling-manager';
+
+import type { Connector, ConnectorConfig } from '../types/types';
 
 interface UseConnectorManagerReturn {
   // State

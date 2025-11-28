@@ -43,12 +43,13 @@ import {
   CircularProgress,
 } from '@mui/material';
 
+import { useConnectors } from '../accountdetails/connectors/context';
+
 import type { Modules } from './types/modules';
 import type { Departments } from './types/departments';
 import type { SearchTagsRecords } from './types/search-tags';
 import type { RecordCategories } from './types/record-categories';
 import type { Filters, FilterHeaderProps, KnowledgeBaseSideBarProps } from './types/knowledge-base';
-import { useConnectors } from '../accountdetails/connectors/context';
 
 // Constants
 const DRAWER_EXPANDED_WIDTH = 280;

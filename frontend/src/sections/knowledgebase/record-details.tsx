@@ -3,6 +3,7 @@ import type { User } from 'src/context/UserContext';
 import type { Icon as IconifyIcon } from '@iconify/react';
 
 import { Icon } from '@iconify/react';
+import ReactMarkdown from 'react-markdown';
 import robotIcon from '@iconify-icons/mdi/robot';
 import closeIcon from '@iconify-icons/mdi/close';
 import React, { useState, useEffect } from 'react';
@@ -10,70 +11,70 @@ import pencilIcon from '@iconify-icons/mdi/pencil';
 import updateIcon from '@iconify-icons/mdi/update';
 import accountIcon from '@iconify-icons/mdi/account';
 import refreshIcon from '@iconify-icons/mdi/refresh';
+import linkIcon from '@iconify-icons/mdi/open-in-new';
+import databaseIcon from '@iconify-icons/mdi/database';
 import clockIcon from '@iconify-icons/mdi/clock-outline';
 import emailIcon from '@iconify-icons/mdi/email-outline';
 import { useParams, useNavigate } from 'react-router-dom';
 import arrowLeftIcon from '@iconify-icons/mdi/arrow-left';
+import infoIcon from '@iconify-icons/mdi/information-outline';
 import trashCanIcon from '@iconify-icons/mdi/trash-can-outline';
-import fileAlertIcon from '@iconify-icons/mdi/file-alert-outline';
-import connectorIcon from '@iconify-icons/mdi/cloud-sync-outline';
-import fileDocumentBoxIcon from '@iconify-icons/mdi/file-document-box';
-import descriptionIcon from '@iconify-icons/mdi/file-document-outline';
-import linkIcon from '@iconify-icons/mdi/open-in-new';
+import zipIcon from '@iconify-icons/vscode-icons/file-type-zip';
 import pdfIcon from '@iconify-icons/vscode-icons/file-type-pdf2';
 import docIcon from '@iconify-icons/vscode-icons/file-type-word';
-import xlsIcon from '@iconify-icons/vscode-icons/file-type-excel';
-import pptIcon from '@iconify-icons/vscode-icons/file-type-powerpoint';
 import txtIcon from '@iconify-icons/vscode-icons/file-type-text';
-import mdIcon from '@iconify-icons/vscode-icons/file-type-markdown';
+import fileAlertIcon from '@iconify-icons/mdi/file-alert-outline';
+import connectorIcon from '@iconify-icons/mdi/cloud-sync-outline';
+import xlsIcon from '@iconify-icons/vscode-icons/file-type-excel';
 import htmlIcon from '@iconify-icons/vscode-icons/file-type-html';
 import jsonIcon from '@iconify-icons/vscode-icons/file-type-json';
-import zipIcon from '@iconify-icons/vscode-icons/file-type-zip';
+import mdIcon from '@iconify-icons/vscode-icons/file-type-markdown';
 import imageIcon from '@iconify-icons/vscode-icons/file-type-image';
-import databaseIcon from '@iconify-icons/mdi/database';
-import infoIcon from '@iconify-icons/mdi/information-outline';
+import fileDocumentBoxIcon from '@iconify-icons/mdi/file-document-box';
+import descriptionIcon from '@iconify-icons/mdi/file-document-outline';
+import pptIcon from '@iconify-icons/vscode-icons/file-type-powerpoint';
 
 import {
   Box,
   Chip,
   Grid,
   Card,
+  Menu,
   Stack,
   alpha,
   Alert,
   Drawer,
   Button,
+  Dialog,
   Divider,
   Tooltip,
   useTheme,
   Snackbar,
+  MenuItem,
   Container,
   Typography,
   IconButton,
   CardHeader,
   CardContent,
-  useMediaQuery,
-  CircularProgress,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  Menu,
-  MenuItem,
   ListItemIcon,
   ListItemText,
+  useMediaQuery,
+  DialogContent,
+  CircularProgress,
 } from '@mui/material';
 
 import axios from 'src/utils/axios';
-import ReactMarkdown from 'react-markdown';
+
 import { CONFIG } from 'src/config-global';
 import { useUsers } from 'src/context/UserContext';
 
-import { KnowledgeBaseAPI } from './services/api';
 import RecordSalesAgent from './ask-me-anything';
+import { KnowledgeBaseAPI } from './services/api';
 import RecordDocumentViewer from './show-documents';
 import EditRecordDialog from './edit-record-dialog';
 import DeleteRecordDialog from './delete-record-dialog';
-import type { MetadataItem, Permissions, RecordDetailsResponse } from './types/record-details';
+
+import type { Permissions, MetadataItem, RecordDetailsResponse } from './types/record-details';
 
 const getIndexingStatusColor = (
   status: string

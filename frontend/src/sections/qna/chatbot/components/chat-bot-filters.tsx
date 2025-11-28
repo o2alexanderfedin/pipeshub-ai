@@ -1,33 +1,28 @@
-import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
+import type { Theme } from '@mui/material/styles';
+
 import { Icon } from '@iconify/react';
-import arrowUpIcon from '@iconify-icons/mdi/arrow-up';
-import chevronDownIcon from '@iconify-icons/mdi/chevron-down';
-import sparklesIcon from '@iconify-icons/mdi/star-four-points';
+import React, { useMemo } from 'react';
 import plusIcon from '@iconify-icons/mdi/plus';
 import searchIcon from '@iconify-icons/mdi/magnify';
-import closeIcon from '@iconify-icons/mdi/close';
-import chevronUpIcon from '@iconify-icons/mdi/chevron-up';
 import appsIcon from '@iconify-icons/mdi/connection';
-import databaseIcon from '@iconify-icons/mdi/database-outline';
+import chevronUpIcon from '@iconify-icons/mdi/chevron-up';
 import filterIcon from '@iconify-icons/mdi/filter-variant';
-import { Theme } from '@mui/material/styles';
+import chevronDownIcon from '@iconify-icons/mdi/chevron-down';
+import databaseIcon from '@iconify-icons/mdi/database-outline';
 
 import {
   Box,
-  useTheme,
-  alpha,
   Menu,
-  MenuItem,
-  Typography,
-  Chip,
-  Divider,
-  TextField,
-  InputAdornment,
-  Collapse,
   Button,
-  Badge,
-  Stack,
+  Divider,
+  useTheme,
+  MenuItem,
+  Collapse,
+  TextField,
+  Typography,
+  InputAdornment,
 } from '@mui/material';
+
 import { createScrollableContainerStyle } from '../utils/styles/scrollbar';
 
 // Types
