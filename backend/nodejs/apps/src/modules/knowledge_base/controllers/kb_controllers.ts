@@ -146,7 +146,7 @@ interface ActiveConnectorsResponse {
   connectors: ConnectorInfo[];
 }
 
-const normalizeAppName = (value: string): string => value.replace(' ', '').toLowerCase();
+const normalizeAppName = (value: string): string => value.replace(/[\s_]+/g, '').toLowerCase();
 
 const validateActiveConnector = async (
   appName: string,

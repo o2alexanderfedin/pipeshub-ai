@@ -28,7 +28,7 @@ export const VerificationMetadata: FC<VerificationMetadataProps> = ({ result }) 
       case VerificationVerdict.ERROR:
         return <Iconify icon="eva:alert-circle-fill" />;
       default:
-        return null;
+        return undefined;
     }
   };
 

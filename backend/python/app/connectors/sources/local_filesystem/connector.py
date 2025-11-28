@@ -9,6 +9,7 @@ from logging import Logger
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
+import chardet
 from fastapi import HTTPException
 from fastapi.responses import StreamingResponse
 
@@ -40,6 +41,7 @@ from app.connectors.sources.local_filesystem.watcher import (
     FileChangeType,
     LocalFileSystemWatcher,
 )
+from app.models.blocks import Block, BlockType, DataFormat
 from app.models.entities import (
     FileRecord,
     Record,
@@ -160,6 +162,11 @@ class LocalFilesystemConnector(BaseConnector):
         self.batch_size = 100
         self.watcher: Optional[LocalFileSystemWatcher] = None
 
+        # Content extraction configuration
+        self.content_extraction_enabled: bool = True
+        self.max_file_size_mb: int = 10
+        self.encoding_fallback: str = "utf-8"
+
         # Supported file extensions
         self.supported_extensions: Set[str] = {
             ".md", ".txt", ".py", ".js", ".ts", ".json", ".yaml", ".yml",
@@ -193,22 +200,37 @@ class LocalFilesystemConnector(BaseConnector):
             True if initialization was successful, False otherwise
         """
         try:
+            # Try org-specific config first, then fall back to general config
             config = await self.config_service.get_config(
+                f"/services/connectors/localfilesystem/config/{self.data_entities_processor.org_id}"
+            ) or await self.config_service.get_config(
                 "/services/connectors/localfilesystem/config"
             )
+
             if not config:
-                self.logger.error("Local Filesystem configuration not found.")
-                return False
+                self.logger.warning("Local Filesystem configuration not found, using defaults.")
+                config = {}
 
             auth_config = config.get("auth", {})
 
             # Use default if watch_path is empty or not provided
-            self.watch_path = auth_config.get("watch_path", "") or "/data/local-files"
+            self.watch_path = auth_config.get("watch_path", "") or "/data/pipeshub/test-files"
             debounce_str = auth_config.get("debounce_seconds", "1.0")
             try:
                 self.debounce_seconds = float(debounce_str)
             except ValueError:
                 self.debounce_seconds = 1.0
+
+            # Read content extraction configuration
+            content_config = config.get("content_extraction", {})
+            self.content_extraction_enabled = content_config.get("enabled", True)
+            self.max_file_size_mb = content_config.get("max_file_size_mb", 10)
+            self.encoding_fallback = content_config.get("encoding_fallback", "utf-8")
+
+            self.logger.info(
+                f"Content extraction: enabled={self.content_extraction_enabled}, "
+                f"max_size_mb={self.max_file_size_mb}"
+            )
 
             if not os.path.exists(self.watch_path):
                 self.logger.error(f"Watch path does not exist: {self.watch_path}")
@@ -371,6 +393,89 @@ class LocalFilesystemConnector(BaseConnector):
             return f"dir/{parent_dir}"
         return "dir/root"
 
+    async def _read_file_content(
+        self,
+        file_path: str,
+        max_size_bytes: Optional[int] = None
+    ) -> Optional[str]:
+        """
+        Read file content with encoding detection and size limits.
+
+        Args:
+            file_path: Absolute path to file
+            max_size_bytes: Skip files larger than this (default from config)
+
+        Returns:
+            File content as string, or None if unreadable
+
+        Behavior:
+            - Returns None if file > max_size_bytes (logs info, not error)
+            - Detects encoding using chardet
+            - Falls back to UTF-8 if detection fails
+            - Catches decode errors and returns None with warning
+            - Catches permission errors and returns None with warning
+            - Catches other exceptions as errors
+        """
+        if max_size_bytes is None:
+            max_size_bytes = self.max_file_size_mb * 1024 * 1024
+
+        try:
+            # Check file size first
+            file_size = os.path.getsize(file_path)
+            if file_size > max_size_bytes:
+                self.logger.info(
+                    f"Skipping content for large file: {file_path} "
+                    f"({file_size} bytes > {max_size_bytes} bytes limit)"
+                )
+                return None
+
+            # Read a chunk for encoding detection
+            with open(file_path, 'rb') as f:
+                # Read up to 1MB for encoding detection
+                chunk_size = min(file_size, 1024 * 1024)
+                raw_data = f.read(chunk_size)
+
+            # Detect encoding
+            detection = chardet.detect(raw_data)
+            encoding = detection.get('encoding') or self.encoding_fallback
+            confidence = detection.get('confidence', 0.0)
+
+            self.logger.debug(
+                f"Detected encoding for {file_path}: {encoding} "
+                f"(confidence: {confidence:.2f})"
+            )
+
+            # Read file with detected encoding
+            try:
+                with open(file_path, 'r', encoding=encoding, errors='strict') as f:
+                    content = f.read()
+                return content
+
+            except UnicodeDecodeError:
+                # Try fallback encoding
+                self.logger.warning(
+                    f"Cannot decode {file_path} with {encoding}, "
+                    f"trying fallback {self.encoding_fallback}"
+                )
+                with open(file_path, 'r', encoding=self.encoding_fallback, errors='replace') as f:
+                    content = f.read()
+                return content
+
+        except FileNotFoundError:
+            self.logger.warning(f"File disappeared during read: {file_path}")
+            return None
+
+        except PermissionError:
+            self.logger.warning(f"Permission denied reading: {file_path}")
+            return None
+
+        except Exception as e:
+            self.logger.error(
+                f"Unexpected error reading {file_path}: {e}",
+                exc_info=True
+            )
+            return None
+
     async def _create_file_record(
         self,
         file_path: str,
@@ -379,6 +484,23 @@ class LocalFilesystemConnector(BaseConnector):
         """Create a FileRecord from a file path."""
         path_obj = Path(file_path)
         stat = os.stat(file_path)
+
+        # Calculate relative path from watch_path for database storage
+        try:
+            relative_path = str(path_obj.relative_to(Path(self.watch_path)))
+        except ValueError:
+            # File outside watch_path (shouldn't happen)
+            self.logger.warning(f"File {file_path} outside watch path {self.watch_path}")
+            relative_path = file_path
+
+        # Extract extension safely
+        extension = path_obj.suffix.lstrip('.') if path_obj.suffix else ""
+
+        # Read file content with size limit and encoding detection
+        content = None
+        if self.content_extraction_enabled:
+            max_size_bytes = self.max_file_size_mb * 1024 * 1024
+            content = await self._read_file_content(file_path, max_size_bytes)
 
         # Generate unique ID
         file_id = existing_record.id if existing_record else str(uuid.uuid4())
@@ -400,11 +522,30 @@ class LocalFilesystemConnector(BaseConnector):
             external_revision_id=str(int(stat.st_mtime)),
             weburl=f"file://{file_path}",
             mime_type=self._get_mime_type(file_path),
-            extension=path_obj.suffix.lstrip('.'),
+            extension=extension,  # Ensure always populated
+            path=relative_path,  # Set path field
             is_file=True,
             size_in_bytes=stat.st_size,
             inherit_permissions=True,
         )
+
+        # Populate block_containers with file content
+        if content is not None:
+            text_block = Block(
+                type=BlockType.TEXT,
+                format=DataFormat.TXT,
+                data=content
+            )
+            record.block_containers.blocks.append(text_block)
+            self.logger.debug(
+                f"Content loaded: {path_obj.name} ({len(content)} chars, "
+                f"{stat.st_size} bytes)"
+            )
+        else:
+            if self.content_extraction_enabled:
+                self.logger.warning(
+                    f"No content for {path_obj.name} (unreadable or too large)"
+                )
 
         # Create default permissions (all users in org have read access)
         permissions = [

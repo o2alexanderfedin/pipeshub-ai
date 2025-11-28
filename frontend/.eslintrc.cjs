@@ -6,6 +6,7 @@ module.exports = {
   env: { browser: true, es2020: true },
   plugins: ['perfectionist', 'unused-imports', '@typescript-eslint', 'prettier'],
   extends: ['airbnb', 'airbnb-typescript', 'airbnb/hooks', 'prettier'],
+  ignorePatterns: ['**/__tests__/**', '**/*.test.ts', '**/*.test.tsx'],
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 'latest',
