@@ -1,20 +1,23 @@
 import React from 'react';
-import {
-  Paper,
-  Typography,
-  Button,
-  Stack,
-  Box,
-  alpha,
-  useTheme,
-} from '@mui/material';
-import { Iconify } from 'src/components/iconify';
-import settingsIcon from '@iconify-icons/eva/settings-2-outline';
-import refreshIcon from '@iconify-icons/mdi/refresh';
-import pauseIcon from '@iconify-icons/mdi/pause';
-import playIcon from '@iconify-icons/mdi/play';
 import keyIcon from '@iconify-icons/mdi/key';
-import { Connector } from '../../types/types';
+import playIcon from '@iconify-icons/mdi/play';
+import pauseIcon from '@iconify-icons/mdi/pause';
+import refreshIcon from '@iconify-icons/mdi/refresh';
+import settingsIcon from '@iconify-icons/eva/settings-2-outline';
+
+import {
+  Box,
+  Paper,
+  Stack,
+  alpha,
+  Button,
+  useTheme,
+  Typography,
+} from '@mui/material';
+
+import { Iconify } from 'src/components/iconify';
+
+import type { Connector } from '../../types/types';
 
 interface ConnectorActionsSidebarProps {
   connector: Connector;

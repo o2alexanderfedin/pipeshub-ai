@@ -6,23 +6,23 @@ import axios from 'src/utils/axios';
 
 import { CONFIG } from 'src/config-global';
 
-import { KnowledgeBaseAPI } from './services/api';
 import KnowledgeSearch from './knowledge-search';
+import { KnowledgeBaseAPI } from './services/api';
 import { ORIGIN } from './constants/knowledge-search';
 import KnowledgeSearchSideBar from './knowledge-search-sidebar';
 import DocxViewer from '../qna/chatbot/components/docx-highlighter';
 import HtmlViewer from '../qna/chatbot/components/html-highlighter';
 import TextViewer from '../qna/chatbot/components/text-highlighter';
+import { useConnectors } from '../accountdetails/connectors/context';
 import ExcelViewer from '../qna/chatbot/components/excel-highlighter';
 import PdfHighlighterComp from '../qna/chatbot/components/pdf-highlighter';
+import ImageHighlighter from '../qna/chatbot/components/image-highlighter';
 import MarkdownViewer from '../qna/chatbot/components/markdown-highlighter';
 import { createScrollableContainerStyle } from '../qna/chatbot/utils/styles/scrollbar';
 import { getConnectorPublicUrl } from '../accountdetails/account-settings/services/utils/services-configuration-service';
-import { useConnectors } from '../accountdetails/connectors/context';
 
 import type { Filters } from './types/knowledge-base';
 import type { PipesHub, SearchResult, AggregatedDocument } from './types/search-response';
-import ImageHighlighter from '../qna/chatbot/components/image-highlighter';
 
 // Constants for sidebar widths - must match with the sidebar component
 const SIDEBAR_EXPANDED_WIDTH = 320;

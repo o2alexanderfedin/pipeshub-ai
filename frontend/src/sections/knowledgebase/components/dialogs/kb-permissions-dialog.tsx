@@ -1,10 +1,15 @@
-import React from 'react';
-import axios from 'src/utils/axios';
-import UnifiedPermissionsDialog, {
-  UnifiedPermissionsApi,
+import type {
   Team,
   User,
+  UnifiedPermissionsApi,
 } from 'src/components/permissions/UnifiedPermissionsDialog';
+
+import React from 'react';
+
+import axios from 'src/utils/axios';
+
+import UnifiedPermissionsDialog from 'src/components/permissions/UnifiedPermissionsDialog';
+
 import { KnowledgeBaseAPI } from '../../services/api';
 
 interface KbPermissionsDialogProps {

@@ -1,17 +1,20 @@
 import React from 'react';
+
 import {
-  Paper,
   Box,
-  Typography,
+  Chip,
+  Paper,
+  Stack,
+  alpha,
   Switch,
   Tooltip,
-  Stack,
-  Chip,
-  alpha,
   useTheme,
+  Typography,
 } from '@mui/material';
-import { Connector } from '../../types/types';
+
 import { isNoneAuthType } from '../../utils/auth';
+
+import type { Connector } from '../../types/types';
 
 interface ConnectorStatusCardProps {
   connector: Connector;

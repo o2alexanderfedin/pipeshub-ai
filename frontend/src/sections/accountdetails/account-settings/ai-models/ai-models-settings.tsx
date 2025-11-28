@@ -1,40 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Box,
-  Container,
-  Paper,
-  Typography,
-  Alert,
-  Snackbar,
-  Divider,
-  alpha,
-  useTheme,
-  Fade,
-  Skeleton,
-  Stack,
-  Chip,
-  IconButton,
-  Tooltip,
-} from '@mui/material';
-
-import { Iconify } from 'src/components/iconify';
-import robotIcon from '@iconify-icons/mdi/robot';
 import llmIcon from '@iconify-icons/mdi/chat';
-import embeddingIcon from '@iconify-icons/mdi/vector-polygon';
+import robotIcon from '@iconify-icons/mdi/robot';
+import checkIcon from '@iconify-icons/mdi/check';
+import closeIcon from '@iconify-icons/mdi/close';
+import React, { useState, useEffect } from 'react';
 import refreshIcon from '@iconify-icons/mdi/refresh';
 import infoIcon from '@iconify-icons/mdi/info-circle';
 import arrowRightIcon from '@iconify-icons/mdi/arrow-right';
-import checkIcon from '@iconify-icons/mdi/check';
-import closeIcon from '@iconify-icons/mdi/close';
+import embeddingIcon from '@iconify-icons/mdi/vector-polygon';
+
+import {
+  Box,
+  Fade,
+  Chip,
+  Alert,
+  alpha,
+  Stack,
+  Divider,
+  Tooltip,
+  Snackbar,
+  useTheme,
+  Skeleton,
+  Container,
+  Typography,
+  IconButton,
+} from '@mui/material';
+
+import { Iconify } from 'src/components/iconify';
+
+import { 
+  AVAILABLE_MODEL_PROVIDERS 
+} from './types';
 import { modelService } from './services/universal-config';
 import ProviderCards from './components/available-models-card';
 import ModelConfigurationDialog from './components/configure-model-dialog';
 import ConfiguredModelsDisplay from './components/configured-models-display';
-import { 
-  AVAILABLE_MODEL_PROVIDERS, 
-  ConfiguredModel, 
+
+import type { 
+  ModelType, 
   ModelProvider, 
-  ModelType 
+  ConfiguredModel 
 } from './types';
 
 const AiModelsSettings: React.FC = () => {

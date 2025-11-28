@@ -1,19 +1,22 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams, useParams } from 'react-router-dom';
-import { useAuthContext } from 'src/auth/hooks';
-import axios from 'src/utils/axios';
+import checkIcon from '@iconify-icons/mdi/check';
+import errorIcon from '@iconify-icons/mdi/error';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
-import Typography from '@mui/material/Typography';
-import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
+
+import axios from 'src/utils/axios';
 
 import { CONFIG } from 'src/config-global';
+
 import { Iconify } from 'src/components/iconify';
-import checkIcon from '@iconify-icons/mdi/check';
-import errorIcon from '@iconify-icons/mdi/error';
+
+import { useAuthContext } from 'src/auth/hooks';
 
 export default function ConnectorOAuthCallback() {
   const [status, setStatus] = useState<'processing' | 'success' | 'error'>('processing');
@@ -63,7 +66,7 @@ export default function ConnectorOAuthCallback() {
 
         // Prefer JSON redirectUrl for client-side navigation (prevents CORS on redirects)
         if (response?.data?.redirectUrl) {
-          const redirectUrl: string = response.data.redirectUrl;
+          const {redirectUrl} = response.data;
           setStatus('success');
           setMessage('OAuth authentication successful! Redirecting...');
           setTimeout(() => {

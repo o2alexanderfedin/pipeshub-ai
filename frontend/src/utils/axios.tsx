@@ -93,7 +93,7 @@ axiosInstance.interceptors.response.use(
         processedError.statusCode = error.response.status;
 
         // Set message and details from response if available
-        const data: any = error.response.data;
+        const {data} = error.response;
         if (data) {
           if (typeof data === 'string') {
             processedError.message = data;

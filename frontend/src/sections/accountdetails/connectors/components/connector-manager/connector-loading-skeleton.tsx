@@ -1,13 +1,14 @@
 import React from 'react';
+
 import {
-  Container,
   Box,
-  Stack,
-  Skeleton,
   Grid,
+  Stack,
   Paper,
   alpha,
+  Skeleton,
   useTheme,
+  Container,
 } from '@mui/material';
 
 interface ConnectorLoadingSkeletonProps {

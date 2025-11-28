@@ -1,3 +1,5 @@
+import type { UnifiedPermission } from 'src/components/permissions/UnifiedPermissionsDialog';
+
 import { Icon } from '@iconify/react';
 import refreshIcon from '@iconify-icons/mdi/refresh';
 import eyeIcon from '@iconify-icons/mdi/eye-outline';
@@ -5,7 +7,7 @@ import editIcon from '@iconify-icons/mdi/pencil-outline';
 import deleteIcon from '@iconify-icons/mdi/delete-outline';
 import downloadIcon from '@iconify-icons/mdi/download-outline';
 import folderOpenIcon from '@iconify-icons/mdi/folder-open-outline';
-import React, { useRef, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react';
 
 import {
   Box,
@@ -14,6 +16,7 @@ import {
   Alert,
   alpha,
   styled,
+  Divider,
   Snackbar,
   useTheme,
   MenuItem,
@@ -21,18 +24,18 @@ import {
   ListItemText,
   LinearProgress,
   CircularProgress,
-  Divider,
 } from '@mui/material';
-import { UnifiedPermission } from 'src/components/permissions/UnifiedPermissionsDialog';
+
 import UploadManager from './upload-manager';
 import { useRouter } from './hooks/use-router';
 import { KnowledgeBaseAPI } from './services/api';
+import { ORIGIN } from './constants/knowledge-search';
 import DashboardComponent from './components/dashboard';
+import { renderKBDetail } from './components/kb-details';
 import AllRecordsView from './components/all-records-view';
 import { EditFolderDialog } from './components/dialogs/edit-dialogs';
-import { CreateFolderDialog, DeleteConfirmDialog } from './components/dialogs';
 import KbPermissionsDialog from './components/dialogs/kb-permissions-dialog';
-import { renderKBDetail } from './components/kb-details';
+import { CreateFolderDialog, DeleteConfirmDialog } from './components/dialogs';
 
 // Import types and services
 import type {
@@ -43,7 +46,6 @@ import type {
   UpdatePermissionRequest,
   RemovePermissionRequest,
 } from './types/kb';
-import { ORIGIN } from './constants/knowledge-search';
 
 type ViewMode = 'grid' | 'list';
 

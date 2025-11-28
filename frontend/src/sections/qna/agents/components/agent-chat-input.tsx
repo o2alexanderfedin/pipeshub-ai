@@ -1,42 +1,45 @@
-import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
+import type { Connector } from 'src/sections/accountdetails/connectors/types/types';
+
 import { Icon } from '@iconify/react';
-import arrowUpIcon from '@iconify-icons/mdi/arrow-up';
-import chevronDownIcon from '@iconify-icons/mdi/chevron-down';
-import plusIcon from '@iconify-icons/mdi/plus';
-import closeIcon from '@iconify-icons/mdi/close';
-import searchIcon from '@iconify-icons/mdi/magnify';
-import toolIcon from '@iconify-icons/mdi/tools';
-import databaseIcon from '@iconify-icons/mdi/database';
-import sparklesIcon from '@iconify-icons/mdi/star-four-points';
 import cogIcon from '@iconify-icons/mdi/cog';
+import plusIcon from '@iconify-icons/mdi/plus';
+import toolIcon from '@iconify-icons/mdi/tools';
+import closeIcon from '@iconify-icons/mdi/close';
 import checkIcon from '@iconify-icons/mdi/check';
+import searchIcon from '@iconify-icons/mdi/magnify';
+import arrowUpIcon from '@iconify-icons/mdi/arrow-up';
+import databaseIcon from '@iconify-icons/mdi/database';
+import chevronDownIcon from '@iconify-icons/mdi/chevron-down';
+import sparklesIcon from '@iconify-icons/mdi/star-four-points';
+import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react';
+
 import {
   Box,
-  Paper,
-  IconButton,
-  useTheme,
-  alpha,
+  Tab,
   Menu,
-  MenuItem,
-  Typography,
   Chip,
+  Grid,
+  Tabs,
+  Paper,
+  alpha,
+  Badge,
+  Dialog,
+  Button,
   Tooltip,
   Divider,
-  Dialog,
+  useTheme,
+  MenuItem,
+  TextField,
+  IconButton,
+  Typography,
   DialogTitle,
+  Autocomplete,
   DialogContent,
   DialogActions,
-  TextField,
-  InputAdornment,
-  Grid,
-  Button,
-  Badge,
-  Autocomplete,
-  Tabs,
-  Tab
+  InputAdornment
 } from '@mui/material';
-import { Connector } from 'src/sections/accountdetails/connectors/types/types';
-import { KnowledgeBase } from '../services/api';
+
+import type { KnowledgeBase } from '../services/api';
 
 export interface Model {
   provider: string;
@@ -301,7 +304,7 @@ const AgentChatInput: React.FC<ChatInputProps> = ({
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const value = e.target.value;
+      const {value} = e.target;
       setLocalValue(value);
       setHasText(!!value.trim());
 

@@ -1,20 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  Box,
-  Typography,
-  IconButton,
-  Button,
-  Stack,
-  Chip,
-  alpha,
-  useTheme,
-} from '@mui/material';
-import { Iconify } from 'src/components/iconify';
 import refreshIcon from '@iconify-icons/mdi/refresh';
 import arrowBackIcon from '@iconify-icons/mdi/arrow-left';
+
+import {
+  Box,
+  Chip,
+  Stack,
+  alpha,
+  Button,
+  useTheme,
+  Typography,
+  IconButton,
+} from '@mui/material';
+
 import { useAccountType } from 'src/hooks/use-account-type';
-import { Connector } from '../../types/types';
+
+import { Iconify } from 'src/components/iconify';
+
+import type { Connector } from '../../types/types';
 
 interface ConnectorHeaderProps {
   connector: Connector;

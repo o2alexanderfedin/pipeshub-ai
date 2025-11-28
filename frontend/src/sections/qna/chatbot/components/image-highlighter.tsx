@@ -7,12 +7,12 @@ import type {
 } from 'src/sections/knowledgebase/types/search-response';
 
 import { Icon } from '@iconify/react';
-import alertCircleIcon from '@iconify-icons/mdi/alert-circle-outline';
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import zoomInIcon from '@iconify-icons/mdi/magnify-plus-outline';
-import zoomOutIcon from '@iconify-icons/mdi/magnify-minus-outline';
 import resetIcon from '@iconify-icons/mdi/restore';
 import fitScreenIcon from '@iconify-icons/mdi/fit-to-screen';
+import zoomInIcon from '@iconify-icons/mdi/magnify-plus-outline';
+import zoomOutIcon from '@iconify-icons/mdi/magnify-minus-outline';
+import alertCircleIcon from '@iconify-icons/mdi/alert-circle-outline';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 
 import { styled } from '@mui/material/styles';
 import {

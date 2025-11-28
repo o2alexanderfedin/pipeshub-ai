@@ -1,12 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useParams } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 
-import { CONFIG } from 'src/config-global';
-
 import Sidebar from 'src/sections/accountdetails/Sidebar';
-import { useParams } from 'react-router-dom';
 import ConnectorManager from 'src/sections/accountdetails/connectors/components/connector-manager';
 
 // ----------------------------------------------------------------------

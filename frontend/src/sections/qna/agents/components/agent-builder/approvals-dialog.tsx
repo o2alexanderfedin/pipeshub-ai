@@ -1,29 +1,30 @@
+import { Icon } from '@iconify/react';
 import React, { useState, useEffect } from 'react';
+import checkIcon from '@iconify-icons/mdi/check-circle';
+import closeIcon from '@iconify-icons/eva/close-outline';
+import userIcon from '@iconify-icons/mdi/account-outline';
+import shieldIcon from '@iconify-icons/mdi/shield-check-outline';
+import groupIcon from '@iconify-icons/mdi/account-group-outline';
+
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
   Box,
+  Chip,
+  alpha,
+  Alert,
+  Dialog,
+  Button,
+  Switch,
+  Divider,
+  useTheme,
+  TextField,
   Typography,
   IconButton,
-  useTheme,
-  alpha,
-  Switch,
-  FormControlLabel,
-  Chip,
-  TextField,
+  DialogTitle,
   Autocomplete,
-  Divider,
-  Alert,
+  DialogContent,
+  DialogActions,
+  FormControlLabel,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
-import closeIcon from '@iconify-icons/eva/close-outline';
-import shieldIcon from '@iconify-icons/mdi/shield-check-outline';
-import userIcon from '@iconify-icons/mdi/account-outline';
-import groupIcon from '@iconify-icons/mdi/account-group-outline';
-import checkIcon from '@iconify-icons/mdi/check-circle';
 
 interface User {
   _key: string;

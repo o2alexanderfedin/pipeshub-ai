@@ -1,14 +1,16 @@
 import React from 'react';
-import {
-  Stepper,
-  Step,
-  StepLabel,
-  Box,
-  alpha,
-  useTheme,
-} from '@mui/material';
-import { Iconify } from 'src/components/iconify';
 import checkIcon from '@iconify-icons/mdi/check';
+
+import {
+  Box,
+  Step,
+  alpha,
+  Stepper,
+  useTheme,
+  StepLabel,
+} from '@mui/material';
+
+import { Iconify } from 'src/components/iconify';
 
 interface ConfigStepperProps {
   activeStep: number;

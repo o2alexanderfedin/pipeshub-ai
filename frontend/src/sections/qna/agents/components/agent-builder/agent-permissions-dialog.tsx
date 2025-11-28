@@ -1,11 +1,16 @@
-import React from 'react';
-import axios from 'src/utils/axios';
-import UnifiedPermissionsDialog, {
-  UnifiedPermissionsApi,
-  UnifiedPermission,
+import type {
   Team,
   User,
+  UnifiedPermission,
+  UnifiedPermissionsApi,
 } from 'src/components/permissions/UnifiedPermissionsDialog';
+
+import React from 'react';
+
+import axios from 'src/utils/axios';
+
+import UnifiedPermissionsDialog from 'src/components/permissions/UnifiedPermissionsDialog';
+
 import AgentApiService from '../../services/api';
 
 interface AgentPermissionsDialogProps {

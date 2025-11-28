@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
-import { 
-  useTheme, 
-  alpha, 
-  Box, 
-  Typography, 
-  Card, 
-  CardContent, 
-  Avatar, 
-  Button,
-  Chip,
-  Stack,
-  Tooltip,
-} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { Iconify } from 'src/components/iconify';
-import checkCircleIcon from '@iconify-icons/mdi/check-circle';
-import clockCircleIcon from '@iconify-icons/mdi/clock-outline';
+import boltIcon from '@iconify-icons/mdi/bolt';
 import settingsIcon from '@iconify-icons/mdi/settings';
 import plusCircleIcon from '@iconify-icons/mdi/plus-circle';
-import boltIcon from '@iconify-icons/mdi/bolt';
-import { Connector } from '../types/types';
-import ConnectorConfigForm from './connector-config/connector-config-form';
+import checkCircleIcon from '@iconify-icons/mdi/check-circle';
+import clockCircleIcon from '@iconify-icons/mdi/clock-outline';
+
+import { 
+  Box, 
+  Card, 
+  Chip, 
+  alpha, 
+  Stack, 
+  Avatar, 
+  Button, 
+  Tooltip,
+  useTheme,
+  Typography,
+  CardContent,
+} from '@mui/material';
+
+import { Iconify } from 'src/components/iconify';
+
 import { isNoneAuthType } from '../utils/auth';
+import ConnectorConfigForm from './connector-config/connector-config-form';
+
+import type { Connector } from '../types/types';
 
 interface ConnectorCardProps {
   connector: Connector;
@@ -36,8 +40,8 @@ const ConnectorCard = ({ connector }: ConnectorCardProps) => {
   const connectorImage = connector.iconPath;
   
 
-  const isActive = connector.isActive;
-  const isConfigured = connector.isConfigured;
+  const {isActive} = connector;
+  const {isConfigured} = connector;
 
   const getStatusConfig = () => {
     if (isActive) {

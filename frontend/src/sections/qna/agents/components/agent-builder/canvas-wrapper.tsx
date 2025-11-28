@@ -1,8 +1,11 @@
 // src/sections/qna/agents/components/flow-builder-canvas-wrapper.tsx
 import React from 'react';
+
 import { Box } from '@mui/material';
-import FlowBuilderSidebar from './sidebar';
+
 import AgentBuilderCanvas from './canvas';
+import FlowBuilderSidebar from './sidebar';
+
 import type { AgentBuilderCanvasWrapperProps } from '../../types/agent';
 
 const AgentBuilderCanvasWrapper: React.FC<AgentBuilderCanvasWrapperProps> = ({

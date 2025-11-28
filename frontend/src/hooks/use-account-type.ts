@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import axios from 'src/utils/axios';
 
 interface OrgData {
@@ -64,7 +65,7 @@ export function useAccountType() {
         setLoading(true);
         setError(null);
         const response = await axios.get('/api/v1/org');
-        const data = response.data;
+        const {data} = response;
         
         // Update cache
         cachedOrgData = data;
