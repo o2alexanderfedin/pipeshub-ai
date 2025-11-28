@@ -72,6 +72,11 @@ services:
       - QDRANT_GRPC_PORT=6334
       - QDRANT_PORT=6333
 
+      # AI Model Configuration
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - USE_LOCAL_EMBEDDINGS=${USE_LOCAL_EMBEDDINGS:-true}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-sentence-transformers/all-MiniLM-L6-v2}
+
       - OLLAMA_API_URL=http://host.docker.internal:11434
     depends_on:
       qdrant:
