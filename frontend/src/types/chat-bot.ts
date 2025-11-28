@@ -1,3 +1,5 @@
+import type { VerificationResult } from './verification.types';
+
 export interface ApiCitation {
   citationId: string;
   citationData?: {
@@ -206,6 +208,7 @@ export interface CustomCitation {
   createdAt: string;
   updatedAt: string;
   chunkIndex: number;
+  verification?: VerificationResult;
 }
 
 export interface FormattedMessage {
