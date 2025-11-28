@@ -562,7 +562,8 @@ class BaseArangoService:
                     "drive_record_type": RecordTypes.DRIVE.value,
                 }
             else:
-                connector = connector.upper()
+                # Normalize connector name: "Local Filesystem" → "LOCAL_FILESYSTEM"
+                connector = connector.upper().replace(' ', '_')
                 # Query for specific connector (CONNECTOR origin)
                 query = """
                 LET org_id = @org_id

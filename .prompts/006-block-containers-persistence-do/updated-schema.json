@@ -1,0 +1,436 @@
+{
+  "error": false,
+  "code": 200,
+  "writeConcern": 1,
+  "waitForSync": false,
+  "usesRevisionsAsDocumentIds": true,
+  "syncByRevision": true,
+  "statusString": "loaded",
+  "id": "180",
+  "isSmartChild": false,
+  "schema": {
+    "message": "Document does not match the record schema.",
+    "level": "strict",
+    "type": "json",
+    "rule": {
+      "type": "object",
+      "properties": {
+        "orgId": {
+          "type": "string"
+        },
+        "recordName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "externalRecordId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "externalGroupId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "externalParentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "externalRevisionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "externalRootGroupId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recordType": {
+          "type": "string",
+          "enum": [
+            "FILE",
+            "DRIVE",
+            "WEBPAGE",
+            "MESSAGE",
+            "MAIL",
+            "TICKET",
+            "SHAREPOINT_LIST",
+            "SHAREPOINT_LIST_ITEM",
+            "SHAREPOINT_DOCUMENT_LIBRARY",
+            "OTHERS"
+          ]
+        },
+        "version": {
+          "type": "number",
+          "default": 0
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "CONNECTOR",
+            "UPLOAD"
+          ]
+        },
+        "connectorName": {
+          "type": "string",
+          "enum": [
+            "DRIVE",
+            "GMAIL",
+            "CALENDAR",
+            "ONEDRIVE",
+            "SHAREPOINT ONLINE",
+            "OUTLOOK",
+            "OUTLOOK CALENDAR",
+            "MICROSOFT TEAMS",
+            "NOTION",
+            "SLACK",
+            "KB",
+            "CONFLUENCE",
+            "JIRA",
+            "DROPBOX",
+            "WEB",
+            "BOOKSTACK",
+            "SERVICENOW",
+            "LOCAL_FILESYSTEM",
+            "UNKNOWN"
+          ]
+        },
+        "mimeType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "webUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAtTimestamp": {
+          "type": "number"
+        },
+        "updatedAtTimestamp": {
+          "type": "number"
+        },
+        "lastSyncTimestamp": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "sourceCreatedAtTimestamp": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "sourceLastModifiedTimestamp": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "isDeleted": {
+          "type": "boolean",
+          "default": false
+        },
+        "isArchived": {
+          "type": "boolean",
+          "default": false
+        },
+        "deletedByUserId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "indexingStatus": {
+          "type": "string",
+          "enum": [
+            "NOT_STARTED",
+            "IN_PROGRESS",
+            "PAUSED",
+            "FAILED",
+            "COMPLETED",
+            "FILE_TYPE_NOT_SUPPORTED",
+            "AUTO_INDEX_OFF",
+            "ENABLE_MULTIMODAL_MODELS"
+          ]
+        },
+        "extractionStatus": {
+          "type": "string",
+          "enum": [
+            "NOT_STARTED",
+            "IN_PROGRESS",
+            "PAUSED",
+            "FAILED",
+            "COMPLETED",
+            "FILE_TYPE_NOT_SUPPORTED",
+            "AUTO_INDEX_OFF"
+          ]
+        },
+        "isLatestVersion": {
+          "type": "boolean",
+          "default": true
+        },
+        "isDirty": {
+          "type": "boolean",
+          "default": false
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lastIndexTimestamp": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "lastExtractionTimestamp": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "summaryDocumentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "virtualRecordId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "previewRenderable": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": true
+        },
+        "isShared": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "default": false
+        },
+        "blockContainers": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "blocks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "format": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "string"
+                  },
+                  "index": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "parent_index": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "comments": {
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                  },
+                  "source_creation_date": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "source_update_date": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "source_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "source_name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "source_type": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "links": {
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                  },
+                  "weburl": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "public_data_link": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "public_data_link_expiration_epoch_time_in_ms": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "citation_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "list_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "table_row_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "table_cell_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "code_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "media_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "file_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "link_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "image_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "semantic_metadata": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "format",
+                  "data"
+                ]
+              }
+            },
+            "block_groups": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "recordName",
+        "externalRecordId",
+        "recordType",
+        "origin",
+        "createdAtTimestamp"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "name": "records",
+  "type": 2,
+  "status": 3,
+  "cacheEnabled": false,
+  "isSystem": false,
+  "internalValidatorType": 0,
+  "globallyUniqueId": "hF5A84035CEAE/180",
+  "keyOptions": {
+    "allowUserKeys": true,
+    "type": "traditional",
+    "lastValue": 0
+  },
+  "computedValues": null,
+  "objectId": "181"
+}

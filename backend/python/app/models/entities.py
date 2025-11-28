@@ -88,7 +88,7 @@ class Record(BaseModel):
     child_record_ids: Optional[List[str]] = Field(default_factory=list)
     related_record_ids: Optional[List[str]] = Field(default_factory=list)
     def to_arango_base_record(self) -> Dict:
-        return {
+        base_dict = {
             "_key": self.id,
             "orgId": self.org_id,
             "recordName": self.record_name,
@@ -114,6 +114,12 @@ class Record(BaseModel):
             "previewRenderable": self.preview_renderable,
             "isShared": self.is_shared,
         }
+
+        # Add block_containers if populated (handle empty gracefully)
+        if self.block_containers and (self.block_containers.blocks or self.block_containers.block_groups):
+            base_dict["blockContainers"] = self.block_containers.model_dump(mode='json')
+
+        return base_dict
 
     @staticmethod
     def from_arango_base_record(arango_base_record: Dict) -> "Record":
