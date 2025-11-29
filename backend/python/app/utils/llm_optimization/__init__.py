@@ -17,6 +17,13 @@ from app.utils.llm_optimization.exceptions import (
     CacheError,
     ConfigurationError,
 )
+from app.utils.llm_optimization.batch_client import (
+    BatchClient,
+    BatchRequest,
+    BatchResponse,
+    BatchResult,
+    BatchStatus,
+)
 
 __all__ = [
     "ProviderCapabilities",
@@ -25,6 +32,11 @@ __all__ = [
     "BatchAPIError",
     "CacheError",
     "ConfigurationError",
+    "BatchClient",
+    "BatchRequest",
+    "BatchResponse",
+    "BatchResult",
+    "BatchStatus",
 ]
 
 __version__ = "0.1.0"
