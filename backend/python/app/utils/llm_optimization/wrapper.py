@@ -66,7 +66,9 @@ class OptimizedLLMWrapper:
                 self._cache_manager = CacheManager(config=self.config.cache)
                 logger.info(f"Cache optimization enabled for provider: {provider}")
             else:
-                logger.warning(f"Cache optimization requested but not supported by provider: {provider}")
+                logger.warning(
+                    f"Cache optimization requested but not supported by provider: {provider}"
+                )
 
     def invoke(self, messages: list[dict[str, Any]], **kwargs: Any) -> Any:
         """
@@ -97,7 +99,9 @@ class OptimizedLLMWrapper:
             # Graceful fallback on optimization errors
             if self.config.fallback.enabled:
                 if self.config.fallback.log_failures:
-                    logger.warning(f"Cache optimization failed, falling back to standard API: {e}")
+                    logger.warning(
+                        f"Cache optimization failed, falling back to standard API: {e}"
+                    )
                 optimized_messages = messages
             else:
                 raise OptimizationError(

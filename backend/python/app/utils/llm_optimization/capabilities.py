@@ -9,7 +9,7 @@ modifying existing code.
 """
 
 from dataclasses import dataclass
-from typing import Optional
+from typing import Any, Optional
 from enum import Enum
 
 from app.utils.aimodels import LLMProvider
@@ -181,7 +181,7 @@ class ProviderCapabilities:
         ]
 
     @classmethod
-    def get_optimization_summary(cls, provider: str) -> dict:
+    def get_optimization_summary(cls, provider: str) -> dict[str, Any]:
         """
         Get human-readable optimization summary.
 

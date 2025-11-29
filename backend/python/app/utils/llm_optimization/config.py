@@ -5,7 +5,7 @@ Uses Pydantic for strong typing and validation.
 All fields have safe defaults to ensure backward compatibility.
 """
 
-from typing import Optional, Literal
+from typing import Any, Optional, Literal
 from pydantic import BaseModel, Field, field_validator, ConfigDict
 
 
@@ -142,7 +142,7 @@ class OptimizationConfig(BaseModel):
         return self.batch.enabled or self.cache.enabled
 
     @classmethod
-    def from_dict(cls, data: dict) -> "OptimizationConfig":
+    def from_dict(cls, data: dict[str, Any]) -> "OptimizationConfig":
         """
         Create config from dictionary (typically from ArangoDB).
 
@@ -165,7 +165,7 @@ class OptimizationConfig(BaseModel):
                 field=getattr(e, "field", None),
             )
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         """Convert config to dictionary for storage."""
         return self.dict(exclude_none=True)
 

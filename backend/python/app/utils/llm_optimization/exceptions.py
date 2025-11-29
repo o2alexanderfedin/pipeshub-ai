@@ -8,7 +8,7 @@ Follows exception hierarchy:
     └── ConfigurationError (config validation failures)
 """
 
-from typing import Optional
+from typing import Any, Optional
 
 
 class OptimizationError(Exception):
@@ -18,7 +18,7 @@ class OptimizationError(Exception):
         self,
         message: str,
         provider: Optional[str] = None,
-        details: Optional[dict] = None,
+        details: Optional[dict[str, Any]] = None,
     ) -> None:
         """
         Initialize optimization error.
@@ -101,7 +101,7 @@ class ConfigurationError(OptimizationError):
         self,
         message: str,
         field: Optional[str] = None,
-        value: Optional[any] = None,
+        value: Optional[Any] = None,
     ) -> None:
         """
         Initialize configuration error.

@@ -9,7 +9,7 @@ import time
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 from anthropic import Anthropic
 
 from app.utils.llm_optimization.exceptions import BatchAPIError
@@ -101,7 +101,11 @@ class BatchResponse:
             request_counts=response["request_counts"],
             created_at=cls._parse_timestamp(response["created_at"]),
             expires_at=cls._parse_timestamp(response["expires_at"]),
-            ended_at=cls._parse_timestamp(response.get("ended_at")) if response.get("ended_at") else None,
+            ended_at=(
+                cls._parse_timestamp(response.get("ended_at"))
+                if response.get("ended_at")
+                else None
+            ),
         )
 
     @staticmethod
@@ -320,7 +324,9 @@ class BatchClient:
             # Wait before next poll
             time.sleep(poll_interval)
 
-    def _retry_with_backoff(self, operation: callable, error_message: str) -> Any:
+    def _retry_with_backoff(
+        self, operation: Callable[[], Any], error_message: str
+    ) -> Any:
         """
         Execute operation with exponential backoff retry.
 

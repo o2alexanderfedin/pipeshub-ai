@@ -7,11 +7,10 @@ Supports up to 90% cost reduction for cached content.
 
 import copy
 import math
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any, Optional
 
 from app.utils.llm_optimization.config import CacheConfig
-from app.utils.llm_optimization.exceptions import CacheError
 
 
 @dataclass
@@ -80,7 +79,9 @@ class CacheManager:
         self.config = config
         self._stats = CacheStats()
 
-    def inject_cache_markers(self, messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    def inject_cache_markers(
+        self, messages: list[dict[str, Any]]
+    ) -> list[dict[str, Any]]:
         """
         Inject cache_control markers into messages.
 
@@ -108,7 +109,6 @@ class CacheManager:
             if not isinstance(message, dict) or "role" not in message:
                 continue
 
-            role = message.get("role")
             content = message.get("content")
 
             if not content:
@@ -141,7 +141,9 @@ class CacheManager:
 
         # Apply cache marker only to last cacheable position
         if cacheable_positions:
-            msg_idx, block_idx = cacheable_positions[-1]
+            last_position: tuple[int, Optional[int]] = cacheable_positions[-1]
+            msg_idx = last_position[0]
+            block_idx = last_position[1]
 
             if block_idx is None:
                 # String content
@@ -149,7 +151,9 @@ class CacheManager:
             else:
                 # Content block
                 if "cache_control" not in messages[msg_idx]["content"][block_idx]:
-                    messages[msg_idx]["content"][block_idx]["cache_control"] = {"type": "ephemeral"}
+                    messages[msg_idx]["content"][block_idx]["cache_control"] = {
+                        "type": "ephemeral"
+                    }
 
             self._stats.cached_blocks += 1
 
@@ -157,15 +161,21 @@ class CacheManager:
             if block_idx is None:
                 content_text = messages[msg_idx]["content"]
                 if isinstance(content_text, str):
-                    self._stats.estimated_cached_tokens += self.estimate_tokens(content_text)
+                    self._stats.estimated_cached_tokens += self.estimate_tokens(
+                        content_text
+                    )
             else:
                 block = messages[msg_idx]["content"][block_idx]
                 if block.get("type") == "text":
-                    self._stats.estimated_cached_tokens += self.estimate_tokens(block.get("text", ""))
+                    self._stats.estimated_cached_tokens += self.estimate_tokens(
+                        block.get("text", "")
+                    )
 
         # Update cache hit potential
         if self._stats.total_content_blocks > 0:
-            self._stats.cache_hit_potential = self._stats.cached_blocks / self._stats.total_content_blocks
+            self._stats.cache_hit_potential = (
+                self._stats.cached_blocks / self._stats.total_content_blocks
+            )
 
         return messages
 
