@@ -34,23 +34,22 @@ class FailureMode(str, Enum):
 class HupyyRequest(BaseModel):
     """Request to Hupyy verification API."""
 
-    nl_query: str = Field(..., description="Natural language query")
-    smt_query: str = Field(..., description="SMT-LIB formula")
-    enrich: bool = Field(default=False, description="Always False - no enrichment")
-    timeout_seconds: int = Field(
-        default=150, ge=1, le=300, description="Timeout (1-300s)"
+    informal_text: str = Field(..., description="Natural language text to formalize")
+    skip_formalization: bool = Field(
+        default=False, description="Skip formalization step"
     )
+    enrich: bool = Field(default=False, description="Enable web search enrichment")
 
     @validator("enrich", always=True)
     def force_enrich_false(cls, v: bool) -> bool:
         """Force enrich=false as per requirements."""
         return False
 
-    @validator("nl_query", "smt_query")
+    @validator("informal_text")
     def validate_non_empty(cls, v: str) -> str:
-        """Ensure queries are non-empty."""
+        """Ensure text is non-empty."""
         if not v or not v.strip():
-            raise ValueError("Query cannot be empty")
+            raise ValueError("Informal text cannot be empty")
         return v.strip()
 
     class Config:
@@ -58,10 +57,9 @@ class HupyyRequest(BaseModel):
 
         json_schema_extra = {
             "example": {
-                "nl_query": "Find all users with admin privileges",
-                "smt_query": "(assert (exists ((x User)) (hasRole x Admin)))",
+                "informal_text": "Find all users with admin privileges",
+                "skip_formalization": False,
                 "enrich": False,
-                "timeout_seconds": 150,
             }
         }
 
@@ -85,6 +83,68 @@ class HupyyResponse(BaseModel):
     duration_ms: Optional[int] = Field(
         default=None, ge=0, description="Verification duration"
     )
+
+    @classmethod
+    def from_hupyy_process_response(cls, response_data: Dict[str, Any]) -> "HupyyResponse":
+        """
+        Parse Hupyy /pipeline/process response into HupyyResponse.
+
+        Maps:
+        - check_sat_result → verdict (SAT/UNSAT/UNKNOWN)
+        - formalization_similarity → confidence
+        - model, proof, smt_lib_code, formal_text → metadata
+
+        Args:
+            response_data: Raw response from Hupyy /pipeline/process endpoint
+
+        Returns:
+            Parsed HupyyResponse instance
+        """
+        # Map check_sat_result to verdict
+        check_sat = response_data.get("check_sat_result", "").upper()
+        if check_sat == "SAT":
+            verdict = VerificationVerdict.SAT
+        elif check_sat == "UNSAT":
+            verdict = VerificationVerdict.UNSAT
+        else:
+            verdict = VerificationVerdict.UNKNOWN
+
+        # Use formalization_similarity as confidence (default to 0.5 if missing)
+        confidence = response_data.get("formalization_similarity", 0.5)
+
+        # Store additional fields in metadata
+        metadata = {
+            "model": response_data.get("model"),
+            "proof": response_data.get("proof"),
+            "smt_lib_code": response_data.get("smt_lib_code"),
+            "formal_text": response_data.get("formal_text"),
+            "informal_text": response_data.get("informal_text"),
+            "extraction_degradation": response_data.get("extraction_degradation"),
+            "solver_success": response_data.get("solver_success"),
+            "passed_all_checks": response_data.get("passed_all_checks"),
+        }
+
+        # Remove None values
+        metadata = {k: v for k, v in metadata.items() if v is not None}
+
+        # Extract explanation from proof summary if available
+        explanation = None
+        if response_data.get("proof") and isinstance(response_data["proof"], dict):
+            explanation = response_data["proof"].get("summary")
+
+        # Get duration from metrics if available
+        duration_ms = None
+        if response_data.get("metrics") and isinstance(response_data["metrics"], dict):
+            duration_ms = response_data["metrics"].get("total_time_ms")
+
+        return cls(
+            verdict=verdict,
+            confidence=confidence,
+            formalization_similarity=response_data.get("formalization_similarity"),
+            explanation=explanation,
+            metadata=metadata,
+            duration_ms=duration_ms,
+        )
 
     class Config:
         """Pydantic config."""

@@ -77,6 +77,12 @@ services:
       - USE_LOCAL_EMBEDDINGS=${USE_LOCAL_EMBEDDINGS:-true}
       - EMBEDDING_MODEL=${EMBEDDING_MODEL:-sentence-transformers/all-MiniLM-L6-v2}
 
+      # Hupyy Verification Service
+      - HUPYY_API_URL=${HUPYY_API_URL:-https://verticalslice-smt-service-gvav8.ondigitalocean.app}
+
+      # Rate Limiting Configuration
+      - MAX_REQUESTS_PER_MINUTE=${MAX_REQUESTS_PER_MINUTE:-10000}
+
       - OLLAMA_API_URL=http://host.docker.internal:11434
     depends_on:
       qdrant:

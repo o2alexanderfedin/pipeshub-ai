@@ -223,6 +223,7 @@ export const streamChat =
         modelKey: req.body.modelKey || null,
         modelName: req.body.modelName || null,
         chatMode: req.body.chatMode || 'standard',
+        verification_enabled: req.body.verificationEnabled || false,
       };
 
       const aiCommandOptions: AICommandOptions = {
@@ -1178,6 +1179,7 @@ export const addMessageStream =
         modelKey: req.body.modelKey || null,
         modelName: req.body.modelName || null,
         chatMode: req.body.chatMode || 'standard',
+        verification_enabled: req.body.verificationEnabled || false,
       };
 
       const aiCommandOptions: AICommandOptions = {

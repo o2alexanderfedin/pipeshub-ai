@@ -216,10 +216,9 @@ class HupyyClient:
         """
         # Prepare Hupyy request
         hupyy_request = HupyyRequest(
-            nl_query=request.nl_query,
-            smt_query=request.content,
+            informal_text=request.content,
+            skip_formalization=False,
             enrich=False,  # Always False
-            timeout_seconds=self.timeout_seconds,
         )
 
         self.logger.info(
@@ -229,16 +228,16 @@ class HupyyClient:
 
         # Make HTTP request
         response = await self.http_client.post(
-            f"{self.api_url}/verify",
+            f"{self.api_url}/pipeline/process",
             json=hupyy_request.model_dump(),
             headers={"Content-Type": "application/json"},
         )
 
         response.raise_for_status()
 
-        # Parse response
+        # Parse response using the parser
         response_data = response.json()
-        return HupyyResponse(**response_data)
+        return HupyyResponse.from_hupyy_process_response(response_data)
 
     async def verify_parallel(
         self, requests: List[VerificationRequest], max_concurrency: int = 5
