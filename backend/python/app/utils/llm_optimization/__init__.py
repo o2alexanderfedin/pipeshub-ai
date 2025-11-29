@@ -24,6 +24,11 @@ from app.utils.llm_optimization.batch_client import (
     BatchResult,
     BatchStatus,
 )
+from app.utils.llm_optimization.cache_manager import (
+    CacheManager,
+    CacheableContent,
+    CacheStats,
+)
 
 __all__ = [
     "ProviderCapabilities",
@@ -37,6 +42,9 @@ __all__ = [
     "BatchResponse",
     "BatchResult",
     "BatchStatus",
+    "CacheManager",
+    "CacheableContent",
+    "CacheStats",
 ]
 
 __version__ = "0.1.0"
