@@ -29,6 +29,7 @@ from app.utils.llm_optimization.cache_manager import (
     CacheableContent,
     CacheStats,
 )
+from app.utils.llm_optimization.wrapper import OptimizedLLMWrapper
 
 __all__ = [
     "ProviderCapabilities",
@@ -45,6 +46,7 @@ __all__ = [
     "CacheManager",
     "CacheableContent",
     "CacheStats",
+    "OptimizedLLMWrapper",
 ]
 
 __version__ = "0.1.0"
