@@ -190,7 +190,7 @@ class VerificationRequest(BaseModel):
         json_schema_extra = {
             "example": {
                 "request_id": "req_123abc",
-                "content": "Sample SMT formula content",
+                "content": "x must be greater than 5 and less than 10",
                 "chunk_index": 0,
                 "total_chunks": 1,
                 "nl_query": "Find admin users",

@@ -1,0 +1,227 @@
+# =============================================================================
+# PipesHub AI - Python Test Dependencies
+# =============================================================================
+# Install with: pip install -r requirements-test.txt
+#
+# This file contains all dependencies needed for running tests, including:
+# - Test frameworks (pytest)
+# - Test utilities (mocking, fixtures, etc.)
+# - Code quality tools (coverage, linting)
+# - Integration test dependencies (testcontainers, etc.)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Core Testing Framework
+# -----------------------------------------------------------------------------
+
+# Pytest - testing framework
+pytest==7.4.3
+
+# Pytest asyncio support
+pytest-asyncio==0.21.1
+
+# Pytest mocking utilities
+pytest-mock==3.12.0
+
+# Pytest coverage plugin
+pytest-cov==4.1.0
+
+# Pytest timeout plugin (prevent hanging tests)
+pytest-timeout==2.2.0
+
+# Pytest xdist for parallel test execution
+pytest-xdist==3.5.0
+
+# Pytest sugar for better output
+pytest-sugar==0.9.7
+
+# Pytest benchmark for performance tests
+pytest-benchmark==4.0.0
+
+# Pytest ordering to control test execution order
+pytest-ordering==0.6
+
+# Pytest retry for flaky tests
+pytest-rerunfailures==12.0
+
+# -----------------------------------------------------------------------------
+# Production Dependencies Required by Tests
+# -----------------------------------------------------------------------------
+# Tests import production code that depends on these libraries
+# These must be installed for tests to run
+
+# Redis - required by app.infrastructure.cache
+redis==5.2.1
+
+# Prometheus client - required by app.infrastructure.metrics
+prometheus-client==0.19.0
+
+# -----------------------------------------------------------------------------
+# HTTP Testing & VCR
+# -----------------------------------------------------------------------------
+
+# VCR.py for recording HTTP interactions
+vcrpy==5.1.0
+
+# Pytest VCR integration
+pytest-vcr==1.0.2
+
+# HTTPX for async HTTP testing
+httpx==0.27.0
+
+# Requests mock for mocking requests library
+requests-mock==1.12.1
+
+# Responses for mocking responses
+responses==0.24.1
+
+# -----------------------------------------------------------------------------
+# Mocking & Fixtures
+# -----------------------------------------------------------------------------
+
+# Factory Boy for test data generation
+factory-boy==3.3.0
+
+# Faker for generating fake data
+Faker==22.0.0
+
+# Freezegun for mocking datetime
+freezegun==1.4.0
+
+# -----------------------------------------------------------------------------
+# Integration Testing
+# -----------------------------------------------------------------------------
+
+# Testcontainers for Docker container management in tests
+testcontainers==4.0.0
+
+# Testcontainers Kafka
+# testcontainers[kafka]==4.0.0
+
+# Testcontainers Postgres
+# testcontainers[postgres]==4.0.0
+
+# Testcontainers Redis
+# testcontainers[redis]==4.0.0
+
+# -----------------------------------------------------------------------------
+# Code Quality & Coverage
+# -----------------------------------------------------------------------------
+
+# Coverage.py for code coverage
+coverage[toml]==7.4.0
+
+# Pytest-html for HTML test reports
+pytest-html==4.1.1
+
+# Pytest-json-report for JSON test reports
+pytest-json-report==1.5.0
+
+# -----------------------------------------------------------------------------
+# Database Testing
+# -----------------------------------------------------------------------------
+
+# Pytest-postgresql for testing with PostgreSQL
+# pytest-postgresql==5.0.0
+
+# Pytest-mongo for testing with MongoDB
+# pytest-mongo==3.1.0
+
+# -----------------------------------------------------------------------------
+# Linting & Type Checking (dev tools)
+# -----------------------------------------------------------------------------
+
+# MyPy for static type checking
+mypy==1.8.0
+
+# Ruff for fast Python linting (already in main deps)
+# ruff==0.11.9
+
+# Black for code formatting
+black==24.1.1
+
+# isort for import sorting
+isort==5.13.2
+
+# -----------------------------------------------------------------------------
+# Additional Testing Utilities
+# -----------------------------------------------------------------------------
+
+# Pydantic for data validation (already in main deps)
+# pydantic==2.10.5
+
+# Python-dotenv for env file loading (already in main deps)
+# python-dotenv==1.0.1
+
+# Deepdiff for comparing complex data structures
+deepdiff==6.7.1
+
+# Pytest-env for environment variable management
+pytest-env==1.1.3
+
+# Pytest-randomly to randomize test order
+pytest-randomly==3.15.0
+
+# -----------------------------------------------------------------------------
+# Async Testing
+# -----------------------------------------------------------------------------
+
+# Pytest-aiohttp for testing aiohttp applications
+pytest-aiohttp==1.0.5
+
+# Async-timeout for async timeouts
+async-timeout==4.0.3
+
+# -----------------------------------------------------------------------------
+# API Testing
+# -----------------------------------------------------------------------------
+
+# Pydantic for request/response validation (already in main)
+# pydantic==2.10.5
+
+# HTTPX for async API testing (already above)
+# httpx==0.27.0
+
+# -----------------------------------------------------------------------------
+# Performance Testing
+# -----------------------------------------------------------------------------
+
+# Locust for load testing (optional)
+# locust==2.20.0
+
+# Memory-profiler for memory profiling
+# memory-profiler==0.61.0
+
+# -----------------------------------------------------------------------------
+# Documentation Testing
+# -----------------------------------------------------------------------------
+
+# Pytest-doctestplus for enhanced doctest support
+# pytest-doctestplus==1.2.0
+
+# -----------------------------------------------------------------------------
+# Notes:
+# -----------------------------------------------------------------------------
+#
+# To install all test dependencies:
+#   pip install -r requirements-test.txt
+#
+# To install main + test dependencies:
+#   pip install -e .[dev]
+#   pip install -r requirements-test.txt
+#
+# To run tests:
+#   pytest                          # Run all tests
+#   pytest -v                       # Verbose output
+#   pytest -k verification          # Run only verification tests
+#   pytest -m unit                  # Run only unit tests
+#   pytest --cov=app                # Run with coverage
+#   pytest -n auto                  # Run in parallel
+#
+# To update this file:
+#   1. Add new dependencies
+#   2. Pin versions for reproducibility
+#   3. Test with: pip install -r requirements-test.txt
+#   4. Consider adding to pyproject.toml [project.optional-dependencies]
+#
+# =============================================================================

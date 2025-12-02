@@ -1,0 +1,1847 @@
+{
+  "config": {
+    "configFile": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/playwright.config.ts",
+    "rootDir": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "project": "PipesHub AI",
+      "description": "End-to-end tests for PipesHub AI verification feature",
+      "testType": "e2e",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "test-results/e2e-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/e2e-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/e2e-junit.xml"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "project": "PipesHub AI",
+          "description": "End-to-end tests for PipesHub AI verification feature",
+          "testType": "e2e",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "project": "PipesHub AI",
+          "description": "End-to-end tests for PipesHub AI verification feature",
+          "testType": "e2e",
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "project": "PipesHub AI",
+          "description": "End-to-end tests for PipesHub AI verification feature",
+          "testType": "e2e",
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "cd frontend && npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true,
+      "timeout": 120000,
+      "stdout": "ignore",
+      "stderr": "pipe"
+    }
+  },
+  "suites": [
+    {
+      "title": "hupyy-verification.spec.ts",
+      "file": "hupyy-verification.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Hupyy SMT Verification E2E",
+          "file": "hupyy-verification.spec.ts",
+          "line": 91,
+          "column": 6,
+          "specs": [
+            {
+              "title": "1. Verification checkbox is visible and functional",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:38.784Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-c409885a0dde36922c99",
+              "file": "hupyy-verification.spec.ts",
+              "line": 107,
+              "column": 7
+            },
+            {
+              "title": "2. Chat works without verification enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:39.199Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-55fca5ca7703c946e327",
+              "file": "hupyy-verification.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "3. Chat works with verification enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:39.599Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-8d079cb34b862c1aba76",
+              "file": "hupyy-verification.spec.ts",
+              "line": 201,
+              "column": 7
+            },
+            {
+              "title": "4. No console errors during verification flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:39.999Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-ff9f8e9462be1899f452",
+              "file": "hupyy-verification.spec.ts",
+              "line": 254,
+              "column": 7
+            },
+            {
+              "title": "5. Network requests validation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:40.396Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-3e6c59bf17e6b7361627",
+              "file": "hupyy-verification.spec.ts",
+              "line": 312,
+              "column": 7
+            },
+            {
+              "title": "1. Verification checkbox is visible and functional",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 15850,
+                      "error": {
+                        "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 23,
+                          "line": 58
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 23,
+                            "line": 58
+                          },
+                          "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:42.084Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 23,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-5bcc9c4a10b480f638d4",
+              "file": "hupyy-verification.spec.ts",
+              "line": 107,
+              "column": 7
+            },
+            {
+              "title": "2. Chat works without verification enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 15718,
+                      "error": {
+                        "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 23,
+                          "line": 58
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 23,
+                            "line": 58
+                          },
+                          "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:56:01.547Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 23,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-0ae042901372791a849b",
+              "file": "hupyy-verification.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "3. Chat works with verification enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 17881,
+                      "error": {
+                        "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 23,
+                          "line": 58
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 23,
+                            "line": 58
+                          },
+                          "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:56:18.799Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 23,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-7f165119ba42a811733a",
+              "file": "hupyy-verification.spec.ts",
+              "line": 201,
+              "column": 7
+            },
+            {
+              "title": "4. No console errors during verification flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14135,
+                      "error": {
+                        "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 23,
+                          "line": 58
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 23,
+                            "line": 58
+                          },
+                          "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:56:38.232Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 23,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-246f2396bacf3a42124a",
+              "file": "hupyy-verification.spec.ts",
+              "line": 254,
+              "column": 7
+            },
+            {
+              "title": "5. Network requests validation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 14113,
+                      "error": {
+                        "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 23,
+                          "line": 58
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 23,
+                            "line": 58
+                          },
+                          "message": "TimeoutError: locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"password\"], input[name=\"password\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\n \u001b[90m 57 |\u001b[39m   \u001b[36mconst\u001b[39m passwordInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"password\"], input[name=\"password\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m   \u001b[36mawait\u001b[39m passwordInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39mpassword)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m\n \u001b[90m 60 |\u001b[39m   \u001b[90m// Click login button\u001b[39m\n \u001b[90m 61 |\u001b[39m   \u001b[36mconst\u001b[39m loginButton \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=\"submit\"], button:has-text(\"Sign in\"), button:has-text(\"Login\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:56:53.928Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 23,
+                        "line": 58
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-2e216d96ed121af93068",
+              "file": "hupyy-verification.spec.ts",
+              "line": 312,
+              "column": 7
+            },
+            {
+              "title": "1. Verification checkbox is visible and functional",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13597,
+                      "error": {
+                        "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 20,
+                          "line": 53
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 20,
+                            "line": 53
+                          },
+                          "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:57:43.622Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 20,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-10117a892c64c8588c01",
+              "file": "hupyy-verification.spec.ts",
+              "line": 107,
+              "column": 7
+            },
+            {
+              "title": "2. Chat works without verification enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13039,
+                      "error": {
+                        "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 20,
+                          "line": 53
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 20,
+                            "line": 53
+                          },
+                          "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:58:02.015Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 20,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-3ad098486a07fee891de",
+              "file": "hupyy-verification.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "3. Chat works with verification enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13018,
+                      "error": {
+                        "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 20,
+                          "line": 53
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 20,
+                            "line": 53
+                          },
+                          "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:58:15.645Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 20,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-46877fcaa232357f9f1b",
+              "file": "hupyy-verification.spec.ts",
+              "line": 201,
+              "column": 7
+            },
+            {
+              "title": "4. No console errors during verification flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13017,
+                      "error": {
+                        "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 20,
+                          "line": 53
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 20,
+                            "line": 53
+                          },
+                          "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:58:29.250Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 20,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-d3f1a34942f11c63f507",
+              "file": "hupyy-verification.spec.ts",
+              "line": 254,
+              "column": 7
+            },
+            {
+              "title": "5. Network requests validation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12998,
+                      "error": {
+                        "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n",
+                        "stack": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                          "column": 20,
+                          "line": 53
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                            "column": 20,
+                            "line": 53
+                          },
+                          "message": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]').first() to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 51 |\u001b[39m   \u001b[90m// Try to find email input field with various selectors\u001b[39m\n \u001b[90m 52 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[33mTEST_CREDENTIALS\u001b[39m\u001b[33m.\u001b[39memail)\u001b[33m;\u001b[39m\n \u001b[90m 55 |\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[90m// Find password input\u001b[39m\u001b[0m\n\u001b[2m    at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)\u001b[22m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Navigating to login page...\n"
+                        },
+                        {
+                          "text": "Not logged in, attempting to login...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:58:42.864Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts",
+                        "column": 20,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "64976b2fa5ec8eecfd1b-0dd0fb6268f6f6aa082f",
+              "file": "hupyy-verification.spec.ts",
+              "line": 312,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "verification/verification-checkbox.spec.ts",
+      "file": "verification/verification-checkbox.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Verification Checkbox",
+          "file": "verification/verification-checkbox.spec.ts",
+          "line": 16,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display verification checkbox",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:40.807Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-9cfb3516d98779584e9b",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "should enable verification when checkbox is clicked",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:41.219Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-002bc6fe7b4ffed6b008",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "should show verification status indicator when enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:55:41.634Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-9f1f5c3ac8a0e1777f0f",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 46,
+              "column": 7
+            },
+            {
+              "title": "should display verification checkbox",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6415,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"verification-checkbox\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"verification-checkbox\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:32:28",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                          "column": 28,
+                          "line": 32
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[90m// Assert checkbox is visible\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   test(\u001b[32m'should enable verification when checkbox is clicked'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                            "column": 28,
+                            "line": 32
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"verification-checkbox\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[90m// Assert checkbox is visible\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   test(\u001b[32m'should enable verification when checkbox is clicked'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:32:28\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:57:09.615Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                        "column": 28,
+                        "line": 32
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-548cabbf791de5b8df72",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "should enable verification when checkbox is clicked",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11438,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:40:20",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                          "column": 20,
+                          "line": 40
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[90m// Act - Click checkbox\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m\n \u001b[90m 42 |\u001b[39m     \u001b[90m// Assert - Checkbox should be checked\u001b[39m\n \u001b[90m 43 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeChecked()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                            "column": 20,
+                            "line": 40
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[90m// Act - Click checkbox\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m\n \u001b[90m 42 |\u001b[39m     \u001b[90m// Assert - Checkbox should be checked\u001b[39m\n \u001b[90m 43 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeChecked()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:40:20\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:57:17.523Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                        "column": 20,
+                        "line": 40
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-e074f66c81a291d33d70",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "should show verification status indicator when enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11520,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:52:20",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                          "column": 20,
+                          "line": 52
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[90m// Act\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[90m// Assert\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m expect(statusIndicator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                            "column": 20,
+                            "line": 52
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[90m// Act\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[90m// Assert\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m expect(statusIndicator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:52:20\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:57:30.519Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                        "column": 20,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-4d6772457a9a6105dc63",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 46,
+              "column": 7
+            },
+            {
+              "title": "should display verification checkbox",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5502,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"verification-checkbox\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"verification-checkbox\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:32:28",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                          "column": 28,
+                          "line": 32
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[90m// Assert checkbox is visible\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   test(\u001b[32m'should enable verification when checkbox is clicked'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                            "column": 28,
+                            "line": 32
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"verification-checkbox\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m     \u001b[90m// Assert checkbox is visible\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   test(\u001b[32m'should enable verification when checkbox is clicked'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:32:28\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:58:56.452Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                        "column": 28,
+                        "line": 32
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-3fd9fc17027d62006310",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "should enable verification when checkbox is clicked",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10475,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:40:20",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                          "column": 20,
+                          "line": 40
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[90m// Act - Click checkbox\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m\n \u001b[90m 42 |\u001b[39m     \u001b[90m// Assert - Checkbox should be checked\u001b[39m\n \u001b[90m 43 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeChecked()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                            "column": 20,
+                            "line": 40
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[90m// Act - Click checkbox\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m\n \u001b[90m 42 |\u001b[39m     \u001b[90m// Assert - Checkbox should be checked\u001b[39m\n \u001b[90m 43 |\u001b[39m     \u001b[36mawait\u001b[39m expect(checkbox)\u001b[33m.\u001b[39mtoBeChecked()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:40:20\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:59:02.540Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                        "column": 20,
+                        "line": 40
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-7f9c3e8f07e0afa4c3ae",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "should show verification status indicator when enabled",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10590,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:52:20",
+                        "location": {
+                          "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                          "column": 20,
+                          "line": 52
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[90m// Act\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[90m// Assert\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m expect(statusIndicator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                            "column": 20,
+                            "line": 52
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"verification-checkbox\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[90m// Act\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m checkbox\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[90m// Assert\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m expect(statusIndicator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:52:20\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-01T03:59:13.593Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts",
+                        "column": 20,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8f1e3aee039df9fc7361-a0d9407983dba50d8d6a",
+              "file": "verification/verification-checkbox.spec.ts",
+              "line": 46,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-01T03:55:38.367Z",
+    "duration": 226054.846,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 24,
+    "flaky": 0
+  }
+}
