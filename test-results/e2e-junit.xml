@@ -1,0 +1,1042 @@
+<testsuites id="" name="" tests="24" failures="24" skipped="0" errors="0" time="226.054846">
+<testsuite name="hupyy-verification.spec.ts" timestamp="2025-12-01T03:55:38.413Z" hostname="chromium" tests="5" failures="5" skipped="0" time="0.007" errors="0">
+<testcase name="Hupyy SMT Verification E2E › 1. Verification checkbox is visible and functional" classname="hupyy-verification.spec.ts" time="0.002">
+<failure message="hupyy-verification.spec.ts:107:7 1. Verification checkbox is visible and functional" type="FAILURE">
+<![CDATA[  [chromium] › hupyy-verification.spec.ts:107:7 › Hupyy SMT Verification E2E › 1. Verification checkbox is visible and functional 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 2. Chat works without verification enabled" classname="hupyy-verification.spec.ts" time="0.001">
+<failure message="hupyy-verification.spec.ts:157:7 2. Chat works without verification enabled" type="FAILURE">
+<![CDATA[  [chromium] › hupyy-verification.spec.ts:157:7 › Hupyy SMT Verification E2E › 2. Chat works without verification enabled 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 3. Chat works with verification enabled" classname="hupyy-verification.spec.ts" time="0.001">
+<failure message="hupyy-verification.spec.ts:201:7 3. Chat works with verification enabled" type="FAILURE">
+<![CDATA[  [chromium] › hupyy-verification.spec.ts:201:7 › Hupyy SMT Verification E2E › 3. Chat works with verification enabled 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 4. No console errors during verification flow" classname="hupyy-verification.spec.ts" time="0.001">
+<failure message="hupyy-verification.spec.ts:254:7 4. No console errors during verification flow" type="FAILURE">
+<![CDATA[  [chromium] › hupyy-verification.spec.ts:254:7 › Hupyy SMT Verification E2E › 4. No console errors during verification flow 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 5. Network requests validation" classname="hupyy-verification.spec.ts" time="0.002">
+<failure message="hupyy-verification.spec.ts:312:7 5. Network requests validation" type="FAILURE">
+<![CDATA[  [chromium] › hupyy-verification.spec.ts:312:7 › Hupyy SMT Verification E2E › 5. Network requests validation 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="verification/verification-checkbox.spec.ts" timestamp="2025-12-01T03:55:38.413Z" hostname="chromium" tests="3" failures="3" skipped="0" time="0.004" errors="0">
+<testcase name="Verification Checkbox › should display verification checkbox" classname="verification/verification-checkbox.spec.ts" time="0.001">
+<failure message="verification-checkbox.spec.ts:27:7 should display verification checkbox" type="FAILURE">
+<![CDATA[  [chromium] › verification/verification-checkbox.spec.ts:27:7 › Verification Checkbox › should display verification checkbox 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verification Checkbox › should enable verification when checkbox is clicked" classname="verification/verification-checkbox.spec.ts" time="0.001">
+<failure message="verification-checkbox.spec.ts:35:7 should enable verification when checkbox is clicked" type="FAILURE">
+<![CDATA[  [chromium] › verification/verification-checkbox.spec.ts:35:7 › Verification Checkbox › should enable verification when checkbox is clicked 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verification Checkbox › should show verification status indicator when enabled" classname="verification/verification-checkbox.spec.ts" time="0.002">
+<failure message="verification-checkbox.spec.ts:46:7 should show verification status indicator when enabled" type="FAILURE">
+<![CDATA[  [chromium] › verification/verification-checkbox.spec.ts:46:7 › Verification Checkbox › should show verification status indicator when enabled 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/alexanderfedin/Library/Caches/ms-playwright/chromium-1194/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-chromium/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="hupyy-verification.spec.ts" timestamp="2025-12-01T03:55:38.413Z" hostname="firefox" tests="5" failures="5" skipped="0" time="77.697" errors="0">
+<testcase name="Hupyy SMT Verification E2E › 1. Verification checkbox is visible and functional" classname="hupyy-verification.spec.ts" time="15.85">
+<failure message="hupyy-verification.spec.ts:107:7 1. Verification checkbox is visible and functional" type="FAILURE">
+<![CDATA[  [firefox] › hupyy-verification.spec.ts:107:7 › Hupyy SMT Verification E2E › 1. Verification checkbox is visible and functional 
+
+    TimeoutError: locator.fill: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="password"], input[name="password"]').first()
+
+
+      56 |   // Find password input
+      57 |   const passwordInput = page.locator('input[type="password"], input[name="password"]').first();
+    > 58 |   await passwordInput.fill(TEST_CREDENTIALS.password);
+         |                       ^
+      59 |
+      60 |   // Click login button
+      61 |   const loginButton = page.locator('button[type="submit"], button:has-text("Sign in"), button:has-text("Login")').first();
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 2. Chat works without verification enabled" classname="hupyy-verification.spec.ts" time="15.718">
+<failure message="hupyy-verification.spec.ts:157:7 2. Chat works without verification enabled" type="FAILURE">
+<![CDATA[  [firefox] › hupyy-verification.spec.ts:157:7 › Hupyy SMT Verification E2E › 2. Chat works without verification enabled 
+
+    TimeoutError: locator.fill: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="password"], input[name="password"]').first()
+
+
+      56 |   // Find password input
+      57 |   const passwordInput = page.locator('input[type="password"], input[name="password"]').first();
+    > 58 |   await passwordInput.fill(TEST_CREDENTIALS.password);
+         |                       ^
+      59 |
+      60 |   // Click login button
+      61 |   const loginButton = page.locator('button[type="submit"], button:has-text("Sign in"), button:has-text("Login")').first();
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 3. Chat works with verification enabled" classname="hupyy-verification.spec.ts" time="17.881">
+<failure message="hupyy-verification.spec.ts:201:7 3. Chat works with verification enabled" type="FAILURE">
+<![CDATA[  [firefox] › hupyy-verification.spec.ts:201:7 › Hupyy SMT Verification E2E › 3. Chat works with verification enabled 
+
+    TimeoutError: locator.fill: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="password"], input[name="password"]').first()
+
+
+      56 |   // Find password input
+      57 |   const passwordInput = page.locator('input[type="password"], input[name="password"]').first();
+    > 58 |   await passwordInput.fill(TEST_CREDENTIALS.password);
+         |                       ^
+      59 |
+      60 |   // Click login button
+      61 |   const loginButton = page.locator('button[type="submit"], button:has-text("Sign in"), button:has-text("Login")').first();
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 4. No console errors during verification flow" classname="hupyy-verification.spec.ts" time="14.135">
+<failure message="hupyy-verification.spec.ts:254:7 4. No console errors during verification flow" type="FAILURE">
+<![CDATA[  [firefox] › hupyy-verification.spec.ts:254:7 › Hupyy SMT Verification E2E › 4. No console errors during verification flow 
+
+    TimeoutError: locator.fill: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="password"], input[name="password"]').first()
+
+
+      56 |   // Find password input
+      57 |   const passwordInput = page.locator('input[type="password"], input[name="password"]').first();
+    > 58 |   await passwordInput.fill(TEST_CREDENTIALS.password);
+         |                       ^
+      59 |
+      60 |   // Click login button
+      61 |   const loginButton = page.locator('button[type="submit"], button:has-text("Sign in"), button:has-text("Login")').first();
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 5. Network requests validation" classname="hupyy-verification.spec.ts" time="14.113">
+<failure message="hupyy-verification.spec.ts:312:7 5. Network requests validation" type="FAILURE">
+<![CDATA[  [firefox] › hupyy-verification.spec.ts:312:7 › Hupyy SMT Verification E2E › 5. Network requests validation 
+
+    TimeoutError: locator.fill: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="password"], input[name="password"]').first()
+
+
+      56 |   // Find password input
+      57 |   const passwordInput = page.locator('input[type="password"], input[name="password"]').first();
+    > 58 |   await passwordInput.fill(TEST_CREDENTIALS.password);
+         |                       ^
+      59 |
+      60 |   // Click login button
+      61 |   const loginButton = page.locator('button[type="submit"], button:has-text("Sign in"), button:has-text("Login")').first();
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:58:23)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="verification/verification-checkbox.spec.ts" timestamp="2025-12-01T03:55:38.413Z" hostname="firefox" tests="3" failures="3" skipped="0" time="29.373" errors="0">
+<testcase name="Verification Checkbox › should display verification checkbox" classname="verification/verification-checkbox.spec.ts" time="6.415">
+<failure message="verification-checkbox.spec.ts:27:7 should display verification checkbox" type="FAILURE">
+<![CDATA[  [firefox] › verification/verification-checkbox.spec.ts:27:7 › Verification Checkbox › should display verification checkbox 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-testid="verification-checkbox"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('[data-testid="verification-checkbox"]')
+
+
+      30 |
+      31 |     // Assert checkbox is visible
+    > 32 |     await expect(checkbox).toBeVisible();
+         |                            ^
+      33 |   });
+      34 |
+      35 |   test('should enable verification when checkbox is clicked', async ({ page }) => {
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:32:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verification Checkbox › should enable verification when checkbox is clicked" classname="verification/verification-checkbox.spec.ts" time="11.438">
+<failure message="verification-checkbox.spec.ts:35:7 should enable verification when checkbox is clicked" type="FAILURE">
+<![CDATA[  [firefox] › verification/verification-checkbox.spec.ts:35:7 › Verification Checkbox › should enable verification when checkbox is clicked 
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="verification-checkbox"]')
+
+
+      38 |
+      39 |     // Act - Click checkbox
+    > 40 |     await checkbox.click();
+         |                    ^
+      41 |
+      42 |     // Assert - Checkbox should be checked
+      43 |     await expect(checkbox).toBeChecked();
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:40:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verification Checkbox › should show verification status indicator when enabled" classname="verification/verification-checkbox.spec.ts" time="11.52">
+<failure message="verification-checkbox.spec.ts:46:7 should show verification status indicator when enabled" type="FAILURE">
+<![CDATA[  [firefox] › verification/verification-checkbox.spec.ts:46:7 › Verification Checkbox › should show verification status indicator when enabled 
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="verification-checkbox"]')
+
+
+      50 |
+      51 |     // Act
+    > 52 |     await checkbox.click();
+         |                    ^
+      53 |
+      54 |     // Assert
+      55 |     await expect(statusIndicator).toBeVisible();
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:52:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/error-context.md]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-firefox/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="hupyy-verification.spec.ts" timestamp="2025-12-01T03:55:38.413Z" hostname="webkit" tests="5" failures="5" skipped="0" time="65.669" errors="0">
+<testcase name="Hupyy SMT Verification E2E › 1. Verification checkbox is visible and functional" classname="hupyy-verification.spec.ts" time="13.597">
+<failure message="hupyy-verification.spec.ts:107:7 1. Verification checkbox is visible and functional" type="FAILURE">
+<![CDATA[  [webkit] › hupyy-verification.spec.ts:107:7 › Hupyy SMT Verification E2E › 1. Verification checkbox is visible and functional 
+
+    TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first() to be visible
+
+
+      51 |   // Try to find email input field with various selectors
+      52 |   const emailInput = page.locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first();
+    > 53 |   await emailInput.waitFor({ state: 'visible', timeout: 10000 });
+         |                    ^
+      54 |   await emailInput.fill(TEST_CREDENTIALS.email);
+      55 |
+      56 |   // Find password input
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-dd4be-x-is-visible-and-functional-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 2. Chat works without verification enabled" classname="hupyy-verification.spec.ts" time="13.039">
+<failure message="hupyy-verification.spec.ts:157:7 2. Chat works without verification enabled" type="FAILURE">
+<![CDATA[  [webkit] › hupyy-verification.spec.ts:157:7 › Hupyy SMT Verification E2E › 2. Chat works without verification enabled 
+
+    TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first() to be visible
+
+
+      51 |   // Try to find email input field with various selectors
+      52 |   const emailInput = page.locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first();
+    > 53 |   await emailInput.waitFor({ state: 'visible', timeout: 10000 });
+         |                    ^
+      54 |   await emailInput.fill(TEST_CREDENTIALS.email);
+      55 |
+      56 |   // Find password input
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-66120-ithout-verification-enabled-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 3. Chat works with verification enabled" classname="hupyy-verification.spec.ts" time="13.018">
+<failure message="hupyy-verification.spec.ts:201:7 3. Chat works with verification enabled" type="FAILURE">
+<![CDATA[  [webkit] › hupyy-verification.spec.ts:201:7 › Hupyy SMT Verification E2E › 3. Chat works with verification enabled 
+
+    TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first() to be visible
+
+
+      51 |   // Try to find email input field with various selectors
+      52 |   const emailInput = page.locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first();
+    > 53 |   await emailInput.waitFor({ state: 'visible', timeout: 10000 });
+         |                    ^
+      54 |   await emailInput.fill(TEST_CREDENTIALS.email);
+      55 |
+      56 |   // Find password input
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-9322f-s-with-verification-enabled-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 4. No console errors during verification flow" classname="hupyy-verification.spec.ts" time="13.017">
+<failure message="hupyy-verification.spec.ts:254:7 4. No console errors during verification flow" type="FAILURE">
+<![CDATA[  [webkit] › hupyy-verification.spec.ts:254:7 › Hupyy SMT Verification E2E › 4. No console errors during verification flow 
+
+    TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first() to be visible
+
+
+      51 |   // Try to find email input field with various selectors
+      52 |   const emailInput = page.locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first();
+    > 53 |   await emailInput.waitFor({ state: 'visible', timeout: 10000 });
+         |                    ^
+      54 |   await emailInput.fill(TEST_CREDENTIALS.email);
+      55 |
+      56 |   // Find password input
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-eb070-rs-during-verification-flow-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hupyy SMT Verification E2E › 5. Network requests validation" classname="hupyy-verification.spec.ts" time="12.998">
+<failure message="hupyy-verification.spec.ts:312:7 5. Network requests validation" type="FAILURE">
+<![CDATA[  [webkit] › hupyy-verification.spec.ts:312:7 › Hupyy SMT Verification E2E › 5. Network requests validation 
+
+    TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first() to be visible
+
+
+      51 |   // Try to find email input field with various selectors
+      52 |   const emailInput = page.locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first();
+    > 53 |   await emailInput.waitFor({ state: 'visible', timeout: 10000 });
+         |                    ^
+      54 |   await emailInput.fill(TEST_CREDENTIALS.email);
+      55 |
+      56 |   // Find password input
+        at login (/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:53:20)
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/hupyy-verification.spec.ts:97:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Navigating to login page...
+Not logged in, attempting to login...
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/hupyy-verification-Hupyy-S-4e6ac-Network-requests-validation-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="verification/verification-checkbox.spec.ts" timestamp="2025-12-01T03:55:38.413Z" hostname="webkit" tests="3" failures="3" skipped="0" time="26.567" errors="0">
+<testcase name="Verification Checkbox › should display verification checkbox" classname="verification/verification-checkbox.spec.ts" time="5.502">
+<failure message="verification-checkbox.spec.ts:27:7 should display verification checkbox" type="FAILURE">
+<![CDATA[  [webkit] › verification/verification-checkbox.spec.ts:27:7 › Verification Checkbox › should display verification checkbox 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-testid="verification-checkbox"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('[data-testid="verification-checkbox"]')
+
+
+      30 |
+      31 |     // Assert checkbox is visible
+    > 32 |     await expect(checkbox).toBeVisible();
+         |                            ^
+      33 |   });
+      34 |
+      35 |   test('should enable verification when checkbox is clicked', async ({ page }) => {
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:32:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--af76d-splay-verification-checkbox-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verification Checkbox › should enable verification when checkbox is clicked" classname="verification/verification-checkbox.spec.ts" time="10.475">
+<failure message="verification-checkbox.spec.ts:35:7 should enable verification when checkbox is clicked" type="FAILURE">
+<![CDATA[  [webkit] › verification/verification-checkbox.spec.ts:35:7 › Verification Checkbox › should enable verification when checkbox is clicked 
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="verification-checkbox"]')
+
+
+      38 |
+      39 |     // Act - Click checkbox
+    > 40 |     await checkbox.click();
+         |                    ^
+      41 |
+      42 |     // Assert - Checkbox should be checked
+      43 |     await expect(checkbox).toBeChecked();
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:40:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--6eeb1-on-when-checkbox-is-clicked-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Verification Checkbox › should show verification status indicator when enabled" classname="verification/verification-checkbox.spec.ts" time="10.59">
+<failure message="verification-checkbox.spec.ts:46:7 should show verification status indicator when enabled" type="FAILURE">
+<![CDATA[  [webkit] › verification/verification-checkbox.spec.ts:46:7 › Verification Checkbox › should show verification status indicator when enabled 
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="verification-checkbox"]')
+
+
+      50 |
+      51 |     // Act
+    > 52 |     await checkbox.click();
+         |                    ^
+      53 |
+      54 |     // Assert
+      55 |     await expect(statusIndicator).toBeVisible();
+        at /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig/tests/e2e/verification/verification-checkbox.spec.ts:52:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../../test-results/e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-artifacts/verification-verification--b8f11-atus-indicator-when-enabled-webkit/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -107,19 +107,28 @@ class HupyyClient:
                 self.metrics.record_cache_operation("get", "hit")
                 self.metrics.record_verification_request("cache_hit", 0.0)
 
-                return VerificationResult(
-                    request_id=request.request_id,
-                    chunk_index=request.chunk_index,
-                    verdict=VerificationVerdict(cached_result["verdict"]),
-                    confidence=cached_result["confidence"],
-                    formalization_similarity=cached_result.get(
-                        "formalization_similarity"
-                    ),
-                    explanation=cached_result.get("explanation"),
-                    metadata=cached_result.get("metadata", {}),
-                    duration_seconds=time.time() - start_time,
-                    cached=True,
-                )
+                # Handle cached result (could be VerificationResult object or dict)
+                if isinstance(cached_result, VerificationResult):
+                    # Already a VerificationResult, update metadata and return
+                    cached_result.cached = True
+                    cached_result.request_id = request.request_id
+                    cached_result.chunk_index = request.chunk_index
+                    return cached_result
+                else:
+                    # Dictionary format, construct VerificationResult
+                    return VerificationResult(
+                        request_id=request.request_id,
+                        chunk_index=request.chunk_index,
+                        verdict=VerificationVerdict(cached_result["verdict"]),
+                        confidence=cached_result["confidence"],
+                        formalization_similarity=cached_result.get(
+                            "formalization_similarity"
+                        ),
+                        explanation=cached_result.get("explanation"),
+                        metadata=cached_result.get("metadata", {}),
+                        duration_seconds=time.time() - start_time,
+                        cached=True,
+                    )
 
             self.metrics.record_cache_operation("get", "miss")
 

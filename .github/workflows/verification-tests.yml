@@ -1,0 +1,332 @@
+name: Verification Tests
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'backend/python/app/verification/**'
+      - 'backend/nodejs/apps/src/modules/**'
+      - 'frontend/src/**'
+      - 'tests/**'
+      - '.github/workflows/verification-tests.yml'
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+# Prevent concurrent runs
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: '3.10'
+  NODE_VERSION: '20.x'
+
+jobs:
+  # ==========================================================================
+  # Python Backend Tests
+  # ==========================================================================
+  python-tests:
+    name: Python Tests (Backend)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    services:
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        working-directory: ./backend/python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install -r requirements-test.txt
+
+      - name: Run linters
+        working-directory: ./backend/python
+        run: |
+          # Run ruff for linting
+          ruff check app/ tests/
+          # Run mypy for type checking
+          mypy app/ --ignore-missing-imports || true
+
+      - name: Run unit tests
+        working-directory: ./backend/python
+        run: |
+          pytest tests/ \
+            -v \
+            -m "unit and verification" \
+            --cov=app/verification \
+            --cov-report=xml \
+            --cov-report=html \
+            --cov-report=term-missing \
+            --junit-xml=test-results/junit.xml \
+            --maxfail=5
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./backend/python/coverage.xml
+          flags: python-backend
+          name: python-coverage
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-test-results
+          path: |
+            backend/python/test-results/
+            backend/python/htmlcov/
+          retention-days: 30
+
+  # ==========================================================================
+  # Node.js Backend Tests
+  # ==========================================================================
+  nodejs-tests:
+    name: Node.js Tests (Backend)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: backend/nodejs/apps/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./backend/nodejs/apps
+        run: npm ci
+
+      - name: Run linters
+        working-directory: ./backend/nodejs/apps
+        run: |
+          npm run lint
+
+      - name: Run unit tests
+        working-directory: ./backend/nodejs/apps
+        run: |
+          npm test -- \
+            --coverage \
+            --ci \
+            --maxWorkers=2 \
+            --reporters=default \
+            --reporters=jest-junit
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./backend/nodejs/apps/coverage/lcov.info
+          flags: nodejs-backend
+          name: nodejs-coverage
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nodejs-test-results
+          path: |
+            backend/nodejs/apps/test-results/
+            backend/nodejs/apps/coverage/
+          retention-days: 30
+
+  # ==========================================================================
+  # React Frontend Tests
+  # ==========================================================================
+  frontend-tests:
+    name: React Tests (Frontend)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Run linters
+        working-directory: ./frontend
+        run: |
+          npm run lint
+
+      - name: Run unit tests
+        working-directory: ./frontend
+        run: |
+          npm test -- \
+            --coverage \
+            --ci \
+            --maxWorkers=2 \
+            --reporters=default \
+            --reporters=jest-junit
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./frontend/coverage/lcov.info
+          flags: frontend
+          name: frontend-coverage
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-test-results
+          path: |
+            frontend/test-results/
+            frontend/coverage/
+          retention-days: 30
+
+  # ==========================================================================
+  # Integration Tests
+  # ==========================================================================
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    services:
+      kafka:
+        image: confluentinc/cp-kafka:latest
+        ports:
+          - 9092:9092
+        env:
+          KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+          KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+      zookeeper:
+        image: confluentinc/cp-zookeeper:latest
+        ports:
+          - 2181:2181
+        env:
+          ZOOKEEPER_CLIENT_PORT: 2181
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        working-directory: ./backend/python
+        run: |
+          pip install -e .
+          pip install -r requirements-test.txt
+
+      - name: Run integration tests
+        working-directory: ./backend/python
+        env:
+          KAFKA_BOOTSTRAP_SERVERS: localhost:9092
+        run: |
+          pytest tests/integration/ \
+            -v \
+            -m integration \
+            --junit-xml=test-results/integration-junit.xml
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-test-results
+          path: backend/python/test-results/
+          retention-days: 30
+
+  # ==========================================================================
+  # E2E Tests with Playwright
+  # ==========================================================================
+  e2e-tests:
+    name: E2E Tests (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox webkit
+
+      - name: Run E2E tests
+        run: |
+          npx playwright test \
+            --project=chromium \
+            --reporter=html \
+            --reporter=junit
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 30
+
+  # ==========================================================================
+  # Test Summary
+  # ==========================================================================
+  test-summary:
+    name: Test Summary
+    needs: [python-tests, nodejs-tests, frontend-tests, integration-tests, e2e-tests]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Generate test summary
+        run: |
+          echo "## Test Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ All test suites completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Test Suites" >> $GITHUB_STEP_SUMMARY
+          echo "- Python Backend Tests" >> $GITHUB_STEP_SUMMARY
+          echo "- Node.js Backend Tests" >> $GITHUB_STEP_SUMMARY
+          echo "- React Frontend Tests" >> $GITHUB_STEP_SUMMARY
+          echo "- Integration Tests" >> $GITHUB_STEP_SUMMARY
+          echo "- E2E Tests" >> $GITHUB_STEP_SUMMARY
