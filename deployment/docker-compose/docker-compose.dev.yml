@@ -1,6 +1,6 @@
 services:
-  pipeshub-ai:
-    image: pipeshub-ai:latest
+  hupyy-kb:
+    image: hupyy-kb:latest
     restart: always
     build:
       context: ../../
@@ -98,8 +98,8 @@ services:
       arango:
         condition: service_started
     volumes:
-      - pipeshub_data:/data/pipeshub
-      - pipeshub_root_local:/root/.local
+      - hupyy_data:/data/hupyy
+      - hupyy_root_local:/root/.local
       - /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig:/data/local-files:ro
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -248,7 +248,7 @@ volumes:
     driver: local
   qdrant_storage:
     driver: local
-  pipeshub_data:
+  hupyy_data:
     driver: local
-  pipeshub_root_local:
+  hupyy_root_local:
     driver: local

@@ -1,7 +1,7 @@
 services:
-  pipeshub-ai:
-    image: pipeshubai/pipeshub-ai:${IMAGE_TAG:-latest}
-    container_name: pipeshub-ai
+  hupyy-kb:
+    image: hupyy/hupyy-kb:${IMAGE_TAG:-latest}
+    container_name: hupyy-kb
     restart: always
     ports:
       - "8091:8091"
@@ -78,8 +78,8 @@ services:
       arango:
         condition: service_healthy
     volumes:
-      - pipeshub_data:/data/pipeshub
-      - pipeshub_root_local:/root/.local
+      - hupyy_data:/data/hupyy
+      - hupyy_root_local:/root/.local
       # Mount local files for Local Filesystem connector
       # Change the host path to your desired directory
       - ${LOCAL_FILES_PATH:-/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig}:/data/local-files:ro
@@ -254,7 +254,7 @@ volumes:
     driver: local
   qdrant_storage:
     driver: local
-  pipeshub_data:
+  hupyy_data:
     driver: local
-  pipeshub_root_local:
+  hupyy_root_local:
     driver: local
