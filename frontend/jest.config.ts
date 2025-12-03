@@ -1,5 +1,5 @@
 /**
- * Jest Configuration for PipesHub AI React Frontend
+ * Jest Configuration for Hupyy KB React Frontend
  *
  * This configuration supports:
  * - React component testing with Testing Library
