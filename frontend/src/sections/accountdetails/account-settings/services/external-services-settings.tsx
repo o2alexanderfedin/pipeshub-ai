@@ -429,7 +429,7 @@ const ExternalServicesSettings = () => {
         <Typography variant="body2">
           Refer to{' '}
           <Link
-            href="https://docs.pipeshub.com/system-overview/external-services"
+            href="https://docs.hupyy.com/system-overview/external-services"
             target="_blank"
             rel="noopener"
             sx={{

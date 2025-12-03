@@ -55,7 +55,7 @@ const CONFIGURATION_STEPS = [
       'LLM configuration is required to proceed with setup. All fields marked with * are required.',
     isRequired: true,
     canSkip: false,
-    documentationUrl: 'https://docs.pipeshub.com/ai-models/overview',
+    documentationUrl: 'https://docs.hupyy.com/ai-models/overview',
   },
   {
     id: 'embedding' as ConfigType,
@@ -67,7 +67,7 @@ const CONFIGURATION_STEPS = [
       'Select the embedding provider to use. You can use the default system embeddings or configure a specific provider.',
     isRequired: false,
     canSkip: true,
-    documentationUrl: 'https://docs.pipeshub.com/ai-models/overview',
+    documentationUrl: 'https://docs.hupyy.com/ai-models/overview',
   },
   {
     id: 'storage' as ConfigType,
@@ -78,7 +78,7 @@ const CONFIGURATION_STEPS = [
       'Choose your preferred storage solution. Local storage is used by default if skipped.',
     isRequired: false,
     canSkip: true,
-    documentationUrl: 'https://docs.pipeshub.com/system-overview/storage',
+    documentationUrl: 'https://docs.hupyy.com/system-overview/storage',
   },
   {
     id: 'url' as ConfigType,
@@ -90,7 +90,7 @@ const CONFIGURATION_STEPS = [
       'Set up public URLs for external integrations. These are optional but recommended for production.',
     isRequired: false,
     canSkip: true,
-    documentationUrl: 'https://docs.pipeshub.com/system-overview/internal-services',
+    documentationUrl: 'https://docs.hupyy.com/system-overview/internal-services',
   },
   {
     id: 'smtp' as ConfigType,
@@ -101,7 +101,7 @@ const CONFIGURATION_STEPS = [
       'Set up email delivery for notifications and alerts. This is optional but recommended.',
     isRequired: false,
     canSkip: true,
-    documentationUrl: 'https://docs.pipeshub.com/smtp',
+    documentationUrl: 'https://docs.hupyy.com/smtp',
   },
 ] as const;
 

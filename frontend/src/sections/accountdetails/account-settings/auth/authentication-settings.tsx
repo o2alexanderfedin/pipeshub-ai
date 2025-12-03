@@ -482,7 +482,7 @@ const AuthenticationSettings: React.FC = () => {
         <Typography variant="body2">
           Refer to{' '}
           <Link 
-            href="https://docs.pipeshub.com/auth" 
+            href="https://docs.hupyy.com/auth" 
             target="_blank" 
             rel="noopener"
             sx={{

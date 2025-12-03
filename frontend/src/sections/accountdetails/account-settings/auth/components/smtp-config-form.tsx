@@ -486,7 +486,7 @@ const SmtpConfigForm = forwardRef<SmtpConfigFormRef, SmtpConfigFormProps>(
         </Snackbar>
         <Alert variant="outlined" severity="info" sx={{ my: 3 }}>
           Refer to{' '}
-          <Link href="https://docs.pipeshub.com/smtp" target="_blank" rel="noopener">
+          <Link href="https://docs.hupyy.com/smtp" target="_blank" rel="noopener">
             the documentation
           </Link>{' '}
           for more information.

@@ -392,7 +392,7 @@ const GoogleAuthForm = forwardRef<GoogleAuthFormRef, GoogleAuthFormProps>(
         </Snackbar>
         <Alert variant="outlined" severity="info" sx={{ my: 3 }}>
           Refer to{' '}
-          <Link href="https://docs.pipeshub.com/auth/google" target="_blank" rel="noopener">
+          <Link href="https://docs.hupyy.com/auth/google" target="_blank" rel="noopener">
             the documentation
           </Link>{' '}
           for more information.

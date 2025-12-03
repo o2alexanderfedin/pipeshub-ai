@@ -546,7 +546,7 @@ const Connectors = () => {
                         Click any connector to configure settings and start syncing data
                         automatically. Refer to{' '}
                         <a
-                          href='https://docs.pipeshub.com/connectors/overview'
+                          href='https://docs.hupyy.com/connectors/overview'
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ color: theme.palette.primary.main }}

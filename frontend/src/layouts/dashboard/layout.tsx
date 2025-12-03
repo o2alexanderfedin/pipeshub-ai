@@ -212,7 +212,7 @@ export function DashboardLayout({ sx, children, header, data }: DashboardLayoutP
               <Box display="flex" alignItems="center" gap={{ xs: 0, sm: 0.75 }}>
                 <IconButton
                   component="a"
-                  href="https://github.com/pipeshub-ai/pipeshub-ai"
+                  href="https://github.com/hupyy/hupyy-kb"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Repository"

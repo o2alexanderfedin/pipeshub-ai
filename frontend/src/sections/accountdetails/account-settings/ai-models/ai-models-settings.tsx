@@ -431,7 +431,7 @@ const AiModelsSettings: React.FC = () => {
                     </Typography>
                     <Box
                       component="a"
-                      href="https://docs.pipeshub.com/ai-models/overview" 
+                      href="https://docs.hupyy.com/ai-models/overview" 
                       target="_blank" 
                       rel="noopener"
                       sx={{

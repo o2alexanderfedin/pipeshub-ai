@@ -82,7 +82,7 @@ const AuthSection: React.FC<AuthSectionProps> = ({
     accountType === 'business' && 
     (connectorParam.appGroup === 'Google Workspace') && 
     connectorParam.authType === 'OAUTH';
-  const pipeshubDocumentationUrl = documentationLinks?.find((link) => link.type === 'pipeshub')?.url || `https://docs.pipeshub.com/connectors/overview`;
+  const pipeshubDocumentationUrl = documentationLinks?.find((link) => link.type === 'pipeshub')?.url || `https://docs.hupyy.com/connectors/overview`;
 
   documentationLinks = documentationLinks?.filter((link) => link.type !== 'pipeshub');
   return (

@@ -36,7 +36,7 @@ const LlmConfigForm = forwardRef<LlmConfigFormRef, LlmConfigFormProps>(
 
       <Alert variant="outlined" severity="info" sx={{ my: 3 }}>
         Refer to{' '}
-        <Link href="https://docs.pipeshub.com/ai-models/overview" target="_blank" rel="noopener">
+        <Link href="https://docs.hupyy.com/ai-models/overview" target="_blank" rel="noopener">
           the documentation
         </Link>{' '}
         for more information.

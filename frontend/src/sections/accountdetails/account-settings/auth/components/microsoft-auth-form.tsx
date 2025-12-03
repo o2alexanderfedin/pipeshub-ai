@@ -392,7 +392,7 @@ const MicrosoftAuthForm = forwardRef<MicrosoftAuthFormRef, MicrosoftAuthFormProp
         <Alert variant="outlined" severity="info" sx={{ my: 3 }}>
           Refer to{' '}
           <Link
-            href="https://docs.pipeshub.com/auth/microsoft-azureAd"
+            href="https://docs.hupyy.com/auth/microsoft-azureAd"
             target="_blank"
             rel="noopener"
           >

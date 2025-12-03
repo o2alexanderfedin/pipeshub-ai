@@ -33,7 +33,7 @@ const Footer = memo(({ isDark }: { isDark: boolean }) => {
       }}
     >
       <Link
-        href="https://github.com/pipeshub-ai/pipeshub-ai"
+        href="https://github.com/hupyy/hupyy-kb"
         target="_blank"
         underline="none"
         sx={{
@@ -61,7 +61,7 @@ const Footer = memo(({ isDark }: { isDark: boolean }) => {
             color: 'inherit',
           }}
         />
-        pipeshub-ai
+        hupyy-kb
       </Link>
     </Box>
   );
@@ -169,7 +169,7 @@ const WelcomeMessageComponent = ({
             WebkitTextFillColor: 'transparent',
           }}
         >
-          PipesHub AI
+          Hupyy KB
         </Typography>
 
         <Typography

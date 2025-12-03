@@ -475,7 +475,7 @@ ${Array.from({ length: Math.ceil(certContent.length / 64) })
       </Snackbar>
       <Alert variant="outlined" severity="info" sx={{ my: 3 }}>
         Refer to{' '}
-        <Link href="https://docs.pipeshub.com/auth/saml" target="_blank" rel="noopener">
+        <Link href="https://docs.hupyy.com/auth/saml" target="_blank" rel="noopener">
           the documentation
         </Link>{' '}
         for more information.
