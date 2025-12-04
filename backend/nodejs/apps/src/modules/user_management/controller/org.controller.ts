@@ -38,6 +38,17 @@ import { AppConfig } from '../../tokens_manager/config/config';
 import { PrometheusService } from '../../../libs/services/prometheus/prometheus.service';
 import { HTTP_STATUS } from '../../../libs/enums/http-status.enum';
 import { ORG_CREATED_ACTIVITY } from '../constants/constants';
+import { ArangoService } from '../../../libs/services/arango.service';
+
+/**
+ * Interface for org existence check results
+ */
+interface OrgExistenceCheck {
+  mongoCount: number;
+  arangoCount: number;
+  exists: boolean;
+  details?: string;
+}
 
 @injectable()
 export class OrgController {
@@ -47,6 +58,7 @@ export class OrgController {
     @inject('Logger') private logger: Logger,
     @inject('EntitiesEventProducer')
     private eventService: EntitiesEventProducer,
+    @inject(ArangoService) private arangoService: ArangoService,
   ) {}
 
   getDomainFromEmail(email: string) {
@@ -60,6 +72,88 @@ export class OrgController {
     const domain = parts[1];
 
     return domain;
+  }
+
+  /**
+   * Check ArangoDB for existing records that might indicate orphaned data
+   * Returns count of records in ArangoDB
+   * Implements fail-safe behavior: returns 0 if ArangoDB is unavailable
+   */
+  private async checkArangoDBRecordCount(): Promise<number> {
+    try {
+      const db = this.arangoService.getConnection();
+      const query = 'FOR r IN records COLLECT WITH COUNT INTO count RETURN count';
+      const cursor = await db.query(query);
+      const result = await cursor.all();
+      return result[0] || 0;
+    } catch (error) {
+      this.logger.warn(
+        'Could not check ArangoDB record count - assuming no records:',
+        error,
+      );
+      // Fail-safe: don't block org creation if ArangoDB is unavailable
+      // This prevents blocking legitimate org creation during ArangoDB maintenance
+      return 0;
+    }
+  }
+
+  /**
+   * Check ArangoDB for any existing organization IDs
+   * Returns count of distinct org IDs in ArangoDB
+   * Implements fail-safe behavior: returns 0 if ArangoDB is unavailable
+   */
+  private async checkArangoDBOrgCount(): Promise<number> {
+    try {
+      const db = this.arangoService.getConnection();
+      const query =
+        'FOR r IN records RETURN DISTINCT r.orgId';
+      const cursor = await db.query(query);
+      const result = await cursor.all();
+      return result.length;
+    } catch (error) {
+      this.logger.warn(
+        'Could not check ArangoDB org count - assuming no orgs:',
+        error,
+      );
+      // Fail-safe: don't block org creation if ArangoDB is unavailable
+      return 0;
+    }
+  }
+
+  /**
+   * Perform cross-database consistency check before org creation
+   * Checks both MongoDB and ArangoDB for existing organizations
+   * Throws error if inconsistency detected (MongoDB empty but ArangoDB has data)
+   */
+  private async performCrossDatabaseOrgCheck(): Promise<OrgExistenceCheck> {
+    // Check MongoDB for existing organizations
+    const mongoCount = await Org.countDocuments();
+
+    // Check ArangoDB for existing data
+    const arangoRecordCount = await this.checkArangoDBRecordCount();
+    const arangoOrgCount = await this.checkArangoDBOrgCount();
+
+    const result: OrgExistenceCheck = {
+      mongoCount,
+      arangoCount: arangoOrgCount,
+      exists: mongoCount > 0 || arangoOrgCount > 0,
+    };
+
+    // CRITICAL: Detect database inconsistency
+    // If MongoDB is empty but ArangoDB has data, this indicates orphaned records
+    if (mongoCount === 0 && arangoRecordCount > 0) {
+      this.logger.error(
+        `DATABASE INCONSISTENCY DETECTED: MongoDB has ${mongoCount} orgs but ArangoDB has ${arangoRecordCount} records belonging to ${arangoOrgCount} org(s)`,
+      );
+      result.details = `Orphaned data detected: ${arangoRecordCount} records in ArangoDB`;
+      throw new InternalServerError(
+        'Database inconsistency detected: ArangoDB contains records but MongoDB has no organization. ' +
+          'This indicates orphaned data from a previous installation. ' +
+          'Please contact support or run database cleanup procedure before creating a new organization.',
+      );
+    }
+
+    return result;
   }
 
   async checkOrgExistence(res: Response): Promise<void> {
@@ -87,10 +181,17 @@ export class OrgController {
         );
       }
 
-      const count = await Org.countDocuments();
-      if (count > 0) {
-        throw new BadRequestError('There is already an organization');
+      // PREVENTION MEASURE #1: Cross-database org validation
+      // Check BOTH MongoDB AND ArangoDB before allowing org creation
+      // This prevents the org mismatch issue where MongoDB is cleared but ArangoDB retains data
+      const orgCheck = await this.performCrossDatabaseOrgCheck();
+
+      if (orgCheck.exists) {
+        throw new BadRequestError(
+          'There is already an organization in the system',
+        );
       }
+
       const domain = this.getDomainFromEmail(contactEmail);
       if (!domain) {
         throw new BadRequestError(
